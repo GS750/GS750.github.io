@@ -1,58 +1,10 @@
 [
   {
-    "objectID": "lessons/Introduction.html",
-    "href": "lessons/Introduction.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Introduction"
-    ]
-  },
-  {
     "objectID": "lessons/Introduction.html#what-is-causal-inference",
     "href": "lessons/Introduction.html#what-is-causal-inference",
     "title": "Introduction",
-    "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "lessons/Introduction.html#question",
-    "href": "lessons/Introduction.html#question",
-    "title": "Introduction",
-    "section": "Question",
-    "text": "Question\nCompute the difference in means between treated and control groups.\n\nReveal correct answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.\n\n\n💡 Answer\nThe estimated average treatment effect is about 2.1 points.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "lessons/Introduction.html#instructions",
-    "href": "lessons/Introduction.html#instructions",
-    "title": "Introduction",
-    "section": "Instructions",
-    "text": "Instructions\nMatch each description on the left with the correct variable type on the right.\n\nTreatment = variable that we manipulate\n\nOutcome = variable we measure\n\n\n\n\nDescription\nMatch\n\n\n\n\n1. Did the student receive the new teaching method?\n❓\n\n\n2. Test score after the intervention\n❓\n\n\n3. Whether the patient got a medication\n❓\n\n\n4. Blood pressure after treatment\n❓\n\n\n\n\n\nReveal Answers\n\n\n\n\nDescription\nAnswer\n\n\n\n\n1. Did the student receive the new teaching method?\nTreatment\n\n\n2. Test score after the intervention\nOutcome\n\n\n3. Whether the patient got a medication\nTreatment\n\n\n4. Blood pressure after treatment\nOutcome",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "lessons/Introduction.html#match-treatment-vs-outcome",
-    "href": "lessons/Introduction.html#match-treatment-vs-outcome",
-    "title": "Introduction",
-    "section": "Match Treatment vs Outcome",
-    "text": "Match Treatment vs Outcome\nDrag the items on the left to the correct category on the right.\n\n\n&lt;div draggable=\"true\" id=\"item1\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Student got new method&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item2\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Test score after intervention&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item3\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Patient received medication&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item4\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Blood pressure after treatment&lt;/div&gt;\n\n\n&lt;div id=\"treatment\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" style=\"height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;\"&gt;\n  &lt;strong&gt;Treatment&lt;/strong&gt;\n&lt;/div&gt;\n&lt;div id=\"outcome\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" style=\"height:120px; border:2px dashed green; padding:5px;\"&gt;\n  &lt;strong&gt;Outcome&lt;/strong&gt;\n&lt;/div&gt;\n\n\n\nCheck Answers",
+    "section": "What is Causal Inference",
+    "text": "What is Causal Inference",
     "crumbs": [
       "Home",
       "Content",
@@ -69,6 +21,66 @@
       "Home",
       "Content",
       "Welcome"
+    ]
+  },
+  {
+    "objectID": "lessons/try_page.html",
+    "href": "lessons/try_page.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lessons/try_page.html#what-is-causal-inference",
+    "href": "lessons/try_page.html#what-is-causal-inference",
+    "title": "Introduction",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lessons/try_page.html#question",
+    "href": "lessons/try_page.html#question",
+    "title": "Introduction",
+    "section": "Question",
+    "text": "Question\nCompute the difference in means between treated and control groups.\n\nReveal correct answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.\n\n\n💡 Answer\nThe estimated average treatment effect is about 2.1 points.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lessons/try_page.html#instructions",
+    "href": "lessons/try_page.html#instructions",
+    "title": "Introduction",
+    "section": "Instructions",
+    "text": "Instructions\nMatch each description on the left with the correct variable type on the right.\n\nTreatment = variable that we manipulate\n\nOutcome = variable we measure\n\n\n\n\nDescription\nMatch\n\n\n\n\n1. Did the student receive the new teaching method?\n❓\n\n\n2. Test score after the intervention\n❓\n\n\n3. Whether the patient got a medication\n❓\n\n\n4. Blood pressure after treatment\n❓\n\n\n\n\n\nReveal Answers\n\n\n\n\nDescription\nAnswer\n\n\n\n\n1. Did the student receive the new teaching method?\nTreatment\n\n\n2. Test score after the intervention\nOutcome\n\n\n3. Whether the patient got a medication\nTreatment\n\n\n4. Blood pressure after treatment\nOutcome",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lessons/try_page.html#match-treatment-vs-outcome",
+    "href": "lessons/try_page.html#match-treatment-vs-outcome",
+    "title": "Introduction",
+    "section": "Match Treatment vs Outcome",
+    "text": "Match Treatment vs Outcome\nDrag the items on the left to the correct category on the right.\n\n\n&lt;div draggable=\"true\" id=\"item1\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Student got new method&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item2\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Test score after intervention&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item3\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Patient received medication&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item4\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Blood pressure after treatment&lt;/div&gt;\n\n\n&lt;div id=\"treatment\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" style=\"height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;\"&gt;\n  &lt;strong&gt;Treatment&lt;/strong&gt;\n&lt;/div&gt;\n&lt;div id=\"outcome\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" style=\"height:120px; border:2px dashed green; padding:5px;\"&gt;\n  &lt;strong&gt;Outcome&lt;/strong&gt;\n&lt;/div&gt;\n\n\n\nCheck Answers",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
     ]
   }
 ]

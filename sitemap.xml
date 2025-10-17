@@ -2,10 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://GS750.github.io/lessons/Introduction.html</loc>
-    <lastmod>2025-10-17T18:32:54.081Z</lastmod>
+    <lastmod>2025-10-17T18:34:14.524Z</lastmod>
   </url>
   <url>
     <loc>https://GS750.github.io/index.html</loc>
-    <lastmod>2025-10-17T18:32:54.081Z</lastmod>
+    <lastmod>2025-10-17T18:34:14.524Z</lastmod>
+  </url>
+  <url>
+    <loc>https://GS750.github.io/lessons/try_page.html</loc>
+    <lastmod>2025-10-17T18:34:14.525Z</lastmod>
   </url>
 </urlset>

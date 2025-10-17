@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../lessons/try_page.html" rel="prev">
+<link href="../lessons/Introduction.html" rel="next">
+<link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -1669,7 +1670,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Introduction.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/try_page.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -1702,13 +1703,13 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/try_page.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/try_page.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/Introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../lessons/Introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -2007,7 +2008,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Introduction.html">Introduction</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/try_page.html">Introduction</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Introduction</h1>
 </div>
@@ -2026,11 +2027,152 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<div id="qwebr-insertion-location-1"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <section id="what-is-causal-inference" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-causal-inference">What is Causal Inference</h2>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p><br></p>
+</section>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<p>Compute the difference in means between treated and control groups.</p>
+<button onclick="document.getElementById('answer1').style.display='block'">
+Reveal correct answer
+</button>
+<div id="answer1" style="display:none; margin-top:10px;">
+<p>💡 <strong>Answer:</strong> The difference in means is approximately <strong>2.1</strong> — same as the regression coefficient on <code>z</code>.</p>
+</div>
+<section id="answer" class="level3 reveal">
+<h3 class="anchored" data-anchor-id="answer">💡 Answer</h3>
+<p>The estimated average treatment effect is about <strong>2.1</strong> points.</p>
+</section>
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>Match each description on the left with the correct variable type on the right.</p>
+<ul>
+<li><strong>Treatment</strong> = variable that we manipulate<br>
+</li>
+<li><strong>Outcome</strong> = variable we measure</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Match</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Did the student receive the new teaching method?</td>
+<td>❓</td>
+</tr>
+<tr class="even">
+<td>2. Test score after the intervention</td>
+<td>❓</td>
+</tr>
+<tr class="odd">
+<td>3. Whether the patient got a medication</td>
+<td>❓</td>
+</tr>
+<tr class="even">
+<td>4. Blood pressure after treatment</td>
+<td>❓</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+Reveal Answers
+</summary>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Did the student receive the new teaching method?</td>
+<td>Treatment</td>
+</tr>
+<tr class="even">
+<td>2. Test score after the intervention</td>
+<td>Outcome</td>
+</tr>
+<tr class="odd">
+<td>3. Whether the patient got a medication</td>
+<td>Treatment</td>
+</tr>
+<tr class="even">
+<td>4. Blood pressure after treatment</td>
+<td>Outcome</td>
+</tr>
+</tbody>
+</table>
+</details>
+</section>
+<section id="match-treatment-vs-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="match-treatment-vs-outcome">Match Treatment vs Outcome</h2>
+<p>Drag the items on the left to the correct category on the right.</p>
+<div style="display:flex; justify-content:space-between; width:600px;">
+<div id="left" style="width:45%;">
+<pre><code>&lt;div draggable="true" id="item1" style="padding:5px; margin:5px; border:1px solid black;"&gt;Student got new method&lt;/div&gt;
+&lt;div draggable="true" id="item2" style="padding:5px; margin:5px; border:1px solid black;"&gt;Test score after intervention&lt;/div&gt;
+&lt;div draggable="true" id="item3" style="padding:5px; margin:5px; border:1px solid black;"&gt;Patient received medication&lt;/div&gt;
+&lt;div draggable="true" id="item4" style="padding:5px; margin:5px; border:1px solid black;"&gt;Blood pressure after treatment&lt;/div&gt;</code></pre>
+</div>
+<div id="right" style="width:45%;">
+<pre><code>&lt;div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;"&gt;
+  &lt;strong&gt;Treatment&lt;/strong&gt;
+&lt;/div&gt;
+&lt;div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed green; padding:5px;"&gt;
+  &lt;strong&gt;Outcome&lt;/strong&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<button onclick="checkAnswer()">
+Check Answers
+</button>
+<div id="result" style="margin-top:10px;">
+
+</div>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+// attach drag events
+document.querySelectorAll('#left div').forEach(function(div) {
+  div.addEventListener('dragstart', drag);
+});
+
+function checkAnswer() {
+  let correct = {
+    "item1": "treatment",
+    "item2": "outcome",
+    "item3": "treatment",
+    "item4": "outcome"
+  };
+  let score = 0;
+  for (let item in correct) {
+    let parentId = document.getElementById(item).parentElement.id;
+    if (parentId === correct[item]) { score += 1; }
+  }
+  document.getElementById('result').innerText = "You got " + score + " out of 4 correct!";
+}
+</script>
 
 
 </section>
@@ -2438,11 +2580,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../lessons/try_page.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="../index.html" class="pagination-link" aria-label="Welcome">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../lessons/Introduction.html" class="pagination-link" aria-label="Introduction">
+        <span class="nav-page-text">Introduction</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -2453,7 +2598,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/GS750/GS750.github.io/edit/main/lessons/Introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/GS750/GS750.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/GS750/GS750.github.io/edit/main/lessons/try_page.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/GS750/GS750.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
