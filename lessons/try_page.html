@@ -2308,8 +2308,168 @@ mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
   });
 }
 </script>
+<section id="matching-again" class="level3">
+<h3 class="anchored" data-anchor-id="matching-again">matching again</h3>
+<div class="drag-exercise" {="html}">
+  <style>
+    .drag-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 650px;
+      margin: 20px auto;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .drag-column {
+      width: 45%;
+    }
+
+    .draggable {
+      padding: 10px;
+      margin: 6px 0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #f8f9fa;
+      cursor: grab;
+      transition: all 0.2s ease;
+    }
+
+    .draggable:hover {
+      background-color: #e9ecef;
+      border-color: #999;
+    }
+
+    .dropzone {
+      min-height: 130px;
+      border: 2px dashed #6c757d;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #fdfdfd;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .dropzone:hover {
+      background-color: #f1f3f5;
+    }
+
+    .dropzone strong {
+      margin-bottom: 5px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    button {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0b5ed7;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+
+  <div class="drag-container">
+    <div id="left" class="drag-column">
+      <div draggable="true" id="item1" class="draggable">Student got new method</div>
+      <div draggable="true" id="item2" class="draggable">Test score after intervention</div>
+      <div draggable="true" id="item3" class="draggable">Patient received medication</div>
+      <div draggable="true" id="item4" class="draggable">Blood pressure after treatment</div>
+    </div>
+
+    <div class="drag-column">
+      <div id="treatment" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <strong>Treatment</strong>
+      </div>
+      <div id="outcome" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <strong>Outcome</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-row">
+    <button onclick="checkAnswer()">Check Answers</button>
+    <button onclick="resetExercise()" style="background-color:#6c757d;">Reset</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    // Allow drop only on dropzones
+    function allowDrop(ev) {
+      if (ev.target.classList.contains('dropzone')) {
+        ev.preventDefault();
+      }
+    }
+
+    // Drag behavior
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    // Drop behavior
+    function drop(ev) {
+      ev.preventDefault();
+      if (ev.target.classList.contains('dropzone')) {
+        const data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    }
+
+    // Attach dragstart event
+    document.querySelectorAll('.draggable').forEach(el => {
+      el.addEventListener('dragstart', drag);
+    });
+
+    // Check answers
+    function checkAnswer() {
+      const correct = { item1: "treatment", item2: "outcome", item3: "treatment", item4: "outcome" };
+      let score = 0;
+      for (let item in correct) {
+        const parentId = document.getElementById(item).parentElement.id;
+        if (parentId === correct[item]) score++;
+      }
+      document.getElementById('result').innerText = `You got ${score} out of 4 correct!`;
+    }
+
+    // Reset exercise: empty the drop zones
+    function resetExercise() {
+      const zones = ["treatment", "outcome"];
+      zones.forEach(id => {
+        const zone = document.getElementById(id);
+        // Remove everything except the <strong> label
+        Array.from(zone.children).forEach(child => {
+          if (child.tagName !== 'STRONG') {
+            zone.removeChild(child);
+          }
+        });
+      });
+      document.getElementById('result').innerText = "";
+    }
+  </script>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
