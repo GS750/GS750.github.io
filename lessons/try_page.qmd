@@ -18,15 +18,47 @@ library(tidyverse)
 ## Question
 
 Compute the difference in means between treated and control groups.
+<!-- Stylish Reveal Button -->
+<style>
+.reveal-btn {
+  background-color: #4CAF50; /* green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
 
-<button onclick="document.getElementById('answer1').style.display='block'">
-Reveal correct answer
+.reveal-btn:hover {
+  background-color: #45a049;  /* darker green on hover */
+  transform: scale(1.05);     /* slight grow effect */
+}
+
+.reveal-btn:active {
+  transform: scale(0.98);     /* shrink a little when clicked */
+}
+</style>
+
+<button class="reveal-btn" onclick="document.getElementById('answer1').style.display='block'">
+Reveal Correct Answer
 </button>
 
-<div id="answer1" style="display:none; margin-top:10px;">
-💡 **Answer:**
-The difference in means is approximately **2.1** — same as the regression coefficient on `z`.
+<div id="answer1" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
+💡 <strong>Answer:</strong> The difference in means is approximately <strong>2.1</strong> — same as the regression coefficient on <code>z</code>.
 </div>
+
+
+<style>
+#treatment, #outcome {
+  display: flex;
+  flex-direction: column;  /* stack items vertically */
+  gap: 5px;                /* space between items */
+}
+</style>
+
+
 
 ::: {.reveal}
 ### 💡 Answer
