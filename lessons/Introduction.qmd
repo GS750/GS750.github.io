@@ -33,3 +33,32 @@ The difference in means is approximately **2.1** — same as the regression coef
 The estimated average treatment effect is about **2.1** points.
 :::
 
+
+
+## Instructions
+
+Match each description on the left with the correct variable type on the right.  
+
+- **Treatment** = variable that we manipulate  
+- **Outcome** = variable we measure
+
+| Description | Match |
+|-------------|-------|
+| 1. Did the student receive the new teaching method? | ❓ |
+| 2. Test score after the intervention | ❓ |
+| 3. Whether the patient got a medication | ❓ |
+| 4. Blood pressure after treatment | ❓ |
+
+<details>
+<summary>Reveal Answers</summary>
+
+| Description | Answer |
+|-------------|-------|
+| 1. Did the student receive the new teaching method? | Treatment |
+| 2. Test score after the intervention | Outcome |
+| 3. Whether the patient got a medication | Treatment |
+| 4. Blood pressure after treatment | Outcome |
+
+</details>
+
+
