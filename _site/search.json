@@ -1,46 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to the casual introduction to Causal Inference!",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Welcome"
-    ]
-  },
-  {
     "objectID": "lessons/Introduction.html",
     "href": "lessons/Introduction.html",
     "title": "Chapter 1: Data visualization",
     "section": "",
     "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Chapter 1: Data visualization"
-    ]
-  },
-  {
-    "objectID": "lessons/Introduction.html#set-up",
-    "href": "lessons/Introduction.html#set-up",
-    "title": "Chapter 1: Data visualization",
-    "section": "",
-    "text": "We have already loaded the R packages you need for this tutorial. Once you start working in RStudio, you will run code like the code shown below to load the R packages you need.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Chapter 1: Data visualization"
-    ]
-  },
-  {
-    "objectID": "lessons/Introduction.html#chapter-1-data-visualization",
-    "href": "lessons/Introduction.html#chapter-1-data-visualization",
-    "title": "Chapter 1: Data visualization",
-    "section": "Chapter 1: Data visualization",
-    "text": "Chapter 1: Data visualization\n\n\nEx 1 in Section 1.4.3\nFill in the blank to make a barplot of species, such that species is assigned to the y aesthetic.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nEx 5 in Section 1.5.5\nMake a scatterplot of bill_depth_mm vs. bill_length_mm and color the points by species (That is a scatterplot with bill depth on the y-axis and bill length on the x-axis). What does adding coloring by species reveal about the relationship between these two variables? What about faceting by species?\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nOpen code chunk\nHere is a code chunk in case you wish to play around with some code\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
@@ -57,6 +21,18 @@
       "Home",
       "Content",
       "Chapter 1: Data visualization"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to the casual introduction to Causal Inference!",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Welcome"
     ]
   }
 ]
