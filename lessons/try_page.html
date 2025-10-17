@@ -2183,7 +2183,7 @@ Reveal Answers
       transform:scale(0.98);
     }
     .dropzone {
-      min-height:120px;
+      min-height:140px;
       border:2px dashed #ccc;
       border-radius:12px;
       padding:10px;
@@ -2193,10 +2193,21 @@ Reveal Answers
       gap:8px;
       background:#fafafa;
       transition:all 0.3s ease;
+      position:relative;
     }
-    .dropzone:hover {
-      background:#f0f7ff;
-      border-color:#90b4f8;
+    .dropzone::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+    }
+    .dropzone * {
+      position:relative;
+      z-index:1;
+    }
+    .dropzone.hover {
+      background:#eef6ff !important;
+      border-color:#90b4f8 !important;
     }
     #treatment { border-color:#90b4f8; background:#f8fbff; }
     #outcome { border-color:#a8e6a1; background:#f9fff8; }
@@ -2228,39 +2239,40 @@ Reveal Answers
 
   <script>
     function allowDrop(ev) {
-      if (ev.target.classList.contains("dropzone")) {
+      if (ev.target.closest(".dropzone")) {
         ev.preventDefault();
-        ev.target.style.backgroundColor = "#eef6ff";
+        const zone = ev.target.closest(".dropzone");
+        zone.classList.add("hover");
       }
     }
 
     function drag(ev) {
       ev.dataTransfer.setData("text", ev.target.id);
+      // Disable pointer events on all draggables during drag
+      document.querySelectorAll('.draggable').forEach(el => el.style.pointerEvents = "none");
     }
 
     function drop(ev) {
       ev.preventDefault();
       const itemId = ev.dataTransfer.getData("text");
-      const target = ev.target.closest(".dropzone"); // ensure drop only into zone
+      const target = ev.target.closest(".dropzone");
       if (target) {
         target.appendChild(document.getElementById(itemId));
-        target.style.backgroundColor = ""; // reset highlight
+        target.classList.remove("hover");
       }
+      // Re-enable pointer events
+      document.querySelectorAll('.draggable').forEach(el => el.style.pointerEvents = "");
     }
 
-    // Reset background on drag leave
     document.addEventListener("dragleave", (e) => {
-      if (e.target.classList && e.target.classList.contains("dropzone")) {
-        e.target.style.backgroundColor = "";
-      }
+      const zone = e.target.closest(".dropzone");
+      if (zone) zone.classList.remove("hover");
     });
 
-    // Attach dragstart events
     document.querySelectorAll('.draggable').forEach(div =>
       div.addEventListener('dragstart', drag)
     );
 
-    // Check answers
     function checkAnswer() {
       let correct = { "item1":"treatment", "item2":"outcome", "item3":"treatment", "item4":"outcome" };
       let score = 0;
@@ -2273,7 +2285,6 @@ Reveal Answers
       res.style.color = score === 4 ? "#2e7d32" : "#d32f2f";
     }
 
-    // Reset boxes
     function resetBoxes() {
       const left = document.getElementById("left");
       document.querySelectorAll('.draggable').forEach(item => left.appendChild(item));
