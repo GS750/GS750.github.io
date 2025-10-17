@@ -1,49 +1,27 @@
-project:
-  type: website
-  
-format: 
-  html:
-    webR: true 
-  
-website:
-  page-navigation: true
-  title: "Casual Causal Inference"
-  search: true
-  reader-mode: true
-  site-url: "https://GS750.github.io/"
-  repo-url: https://github.com/GS750/GS750.github.io
-  repo-actions: [edit, issue]
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: lessons/Introduction.qmd
-        text: Lessons
-  sidebar:
-    style: "floating"
-    contents:
-      - section: "Content"
-        contents:
-          - index.qmd
-          - lessons/Introduction.qmd
+name: Deploy Quarto Site 
 
-  page-footer: 
-    left: "Built using Quarto Webr."
-    right: 
-      - icon: github
-        href: https://github.com/coatless/quarto-webr
+on:
+  push:
+    branches: [main]
 
-# Set the language that should be used for Quarto websites
-# https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/language
-# lang: en
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
 
-# Set default options for every webpage that may or may not include webR.
-webr: 
-  show-startup-message: false    # Display status of webR initialization
-#  show-header-message: false     # Check to see if COOP&COEP headers are set for speed.
-  packages: ['ggplot2', 'dplyr'] # Pre-install dependencies
-#  base-url: ''                   # Base URL used for specifying where R WebAssembly binaries should be located
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-# Attach webR to every page
-filters:
-  - webr
+      - name: Render site
+        run: quarto render
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GH_PAT }}
+          external_repository: gs750/gs750.github.io
+          publish_dir: ./_site
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
