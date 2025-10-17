@@ -86,9 +86,6 @@ Match each description on the left with the correct variable type on the right.
 
 
 
-
-
-
 <div class="drag-exercise" {=html} style="font-family:sans-serif;">
   <style>
     /* Draggable items */
@@ -138,7 +135,76 @@ Match each description on the left with the correct variable type on the right.
       cursor: pointer;
       font-size: 16px;
       transition: background-color 0.3s, transform 0.2s;
+      margin-top:10px;
+    }
+    .check-btn:hover { background-color: #45a049; transform: scale(1.05);}
+    .check-btn:active { transform: scale(0.98);}
+  </style>
 
+  <div id="drag-container">
+    <!-- Left column: draggable items -->
+    <div id="left">
+      <div draggable="true" id="item1" class="drag-item">Student got new method</div>
+      <div draggable="true" id="item2" class="drag-item">Test score after intervention</div>
+      <div draggable="true" id="item3" class="drag-item">Patient received medication</div>
+      <div draggable="true" id="item4" class="drag-item">Blood pressure after treatment</div>
+    </div>
+
+    <!-- Right column: droppable boxes -->
+    <div id="right">
+      <div id="treatment" class="drop-box treatment" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <strong>Treatment</strong>
+      </div>
+      <div id="outcome" class="drop-box outcome" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <strong>Outcome</strong>
+      </div>
+    </div>
+  </div>
+
+  <button class="check-btn" onclick="checkAnswer()">Check Answers</button>
+  <div id="result" style="margin-top:10px; font-weight:bold;"></div>
+
+  <script>
+    // Allow drop only on drop-box
+    function allowDrop(ev) { 
+      ev.preventDefault(); 
+      if (!ev.target.classList.contains('drop-box')) return false;
+    }
+
+    // Drag start
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+
+    // Drop: always append to nearest drop-box
+    function drop(ev) { 
+      ev.preventDefault(); 
+      const draggedId = ev.dataTransfer.getData("text");
+      const draggedEl = document.getElementById(draggedId);
+
+      let dropTarget = ev.target;
+      while(dropTarget && !dropTarget.classList.contains('drop-box')) {
+        dropTarget = dropTarget.parentElement;
+      }
+
+      if(dropTarget) {
+        dropTarget.appendChild(draggedEl);
+      }
+    }
+
+    // Attach dragstart events
+    document.querySelectorAll('#left .drag-item').forEach(div => div.addEventListener('dragstart', drag));
+
+    // Check answers
+    function checkAnswer() {
+      const correct = { "item1":"treatment", "item2":"outcome", "item3":"treatment", "item4":"outcome" };
+      let score = 0;
+      for (let item in correct) {
+        const parentId = document.getElementById(item).parentElement.id;
+        if(parentId === correct[item]) { score += 1; }
+      }
+      document.getElementById('result').innerText = "You got " + score + " out of 4 correct!";
+    }
+  </script>
+</div>
 
 
 ## Matching Exercise: Treatment vs Outcome
