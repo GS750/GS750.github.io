@@ -18,6 +18,7 @@ library(tidyverse)
 ## Question
 
 Compute the difference in means between treated and control groups.
+
 <!-- Stylish Reveal Button -->
 <style>
 .reveal-btn {
@@ -50,20 +51,8 @@ Reveal Correct Answer
 </div>
 
 
-<style>
-#treatment, #outcome {
-  display: flex;
-  flex-direction: column;  /* stack items vertically */
-  gap: 5px;                /* space between items */
-}
-</style>
 
 
-
-::: {.reveal}
-### 💡 Answer
-The estimated average treatment effect is about **2.1** points.
-:::
 
 
 
@@ -95,50 +84,117 @@ Match each description on the left with the correct variable type on the right.
 
 ## Drag-and-Drop Matching: Treatment vs Outcome
 
-<div class="drag-exercise" {=html}>
-  <div style="display:flex; justify-content:space-between; width:600px;">
+
+
+
+
+
+
+
+
+
+<div class="drag-exercise" {=html} style="font-family:sans-serif;">
+  <style>
+    /* Draggable items */
+    .drag-item {
+      padding: 10px;
+      margin: 5px;
+      border: 2px solid #555;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      cursor: grab;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+    .drag-item:active {
+      transform: scale(0.98);
+      background-color: #e0e0e0;
+    }
+
+    /* Droppable boxes */
+    .drop-box {
+      min-height: 120px;
+      border: 2px dashed #555;
+      border-radius: 10px;
+      padding: 10px;
+      overflow:auto;
+      display:flex;
+      flex-direction: column;
+      gap:5px;
+      background-color: #f0f8ff;
+      transition: background-color 0.2s;
+    }
+    .drop-box.treatment { border-color: #3498db; background-color:#eaf4fc;}
+    .drop-box.outcome   { border-color: #2ecc71; background-color:#e8f9ea;}
+    .drop-box.highlight { background-color: #fffae6; }
+
+    /* Layout */
+    #drag-container { display:flex; justify-content:space-between; width:600px; }
+    #left { width:45%; }
+    #right { width:45%; }
+
+    /* Button */
+    .check-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top:10px;
+    }
+    .check-btn:hover { background-color: #45a049; transform: scale(1.05);}
+    .check-btn:active { transform: scale(0.98);}
+  </style>
+
+  <div id="drag-container">
     <!-- Left column: draggable items -->
-    <div id="left" style="width:45%;">
-      <div draggable="true" id="item1" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Student got new method</div>
-      <div draggable="true" id="item2" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Test score after intervention</div>
-      <div draggable="true" id="item3" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Patient received medication</div>
-      <div draggable="true" id="item4" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Blood pressure after treatment</div>
+    <div id="left">
+      <div draggable="true" id="item1" class="drag-item">Student got new method</div>
+      <div draggable="true" id="item2" class="drag-item">Test score after intervention</div>
+      <div draggable="true" id="item3" class="drag-item">Patient received medication</div>
+      <div draggable="true" id="item4" class="drag-item">Blood pressure after treatment</div>
     </div>
 
     <!-- Right column: droppable boxes -->
-    <div id="right" style="width:45%;">
-      <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" 
-           style="min-height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px; overflow:auto; display:flex; flex-direction:column; gap:5px;">
+    <div id="right">
+      <div id="treatment" class="drop-box treatment" ondrop="drop(event)" ondragover="allowDrop(event)">
         <strong>Treatment</strong>
       </div>
-      <div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" 
-           style="min-height:120px; border:2px dashed green; padding:5px; overflow:auto; display:flex; flex-direction:column; gap:5px;">
+      <div id="outcome" class="drop-box outcome" ondrop="drop(event)" ondragover="allowDrop(event)">
         <strong>Outcome</strong>
       </div>
     </div>
   </div>
 
-  <!-- Check answers button -->
-  <button onclick="checkAnswer()" style="margin-top:10px;">Check Answers</button>
-  <div id="result" style="margin-top:10px;"></div>
+  <button class="check-btn" onclick="checkAnswer()">Check Answers</button>
+  <div id="result" style="margin-top:10px; font-weight:bold;"></div>
 
   <script>
-    // Allow drop
-    function allowDrop(ev) { ev.preventDefault(); }
-
-    // Drag event
-    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
-
-    // Drop event: append the dragged item to the box
-    function drop(ev) { 
-      ev.preventDefault(); 
-      ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); 
+    function allowDrop(ev) {
+      ev.preventDefault();
+      // only allow drop if target is a drop-box
+      if (!ev.target.classList.contains('drop-box')) return false;
     }
 
-    // Attach dragstart event to each item
-    document.querySelectorAll('#left div').forEach(div => div.addEventListener('dragstart', drag));
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
 
-    // Check answers
+    function drop(ev) { 
+      ev.preventDefault(); 
+      let target = ev.target;
+      // make sure we drop into the correct box (not another item)
+      while(!target.classList.contains('drop-box')) {
+        target = target.parentElement;
+      }
+      target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); 
+    }
+
+    // Attach dragstart event
+    document.querySelectorAll('#left .drag-item').forEach(div => div.addEventListener('dragstart', drag));
+
     function checkAnswer() {
       let correct = { "item1":"treatment", "item2":"outcome", "item3":"treatment", "item4":"outcome" };
       let score = 0;
@@ -150,6 +206,7 @@ Match each description on the left with the correct variable type on the right.
     }
   </script>
 </div>
+
 
 ## Matching Exercise: Treatment vs Outcome
 
