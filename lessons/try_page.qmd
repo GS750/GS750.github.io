@@ -61,51 +61,63 @@ Match each description on the left with the correct variable type on the right.
 
 </details>
 
-
-## Drag-and-Drop Matching
+## Drag-and-Drop Matching: Treatment vs Outcome
 
 <div class="drag-exercise" {=html}>
   <div style="display:flex; justify-content:space-between; width:600px;">
+    <!-- Left column: draggable items -->
     <div id="left" style="width:45%;">
-      <div draggable="true" id="item1" style="padding:5px; margin:5px; border:1px solid black;">Student got new method</div>
-      <div draggable="true" id="item2" style="padding:5px; margin:5px; border:1px solid black;">Test score after intervention</div>
-      <div draggable="true" id="item3" style="padding:5px; margin:5px; border:1px solid black;">Patient received medication</div>
-      <div draggable="true" id="item4" style="padding:5px; margin:5px; border:1px solid black;">Blood pressure after treatment</div>
+      <div draggable="true" id="item1" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Student got new method</div>
+      <div draggable="true" id="item2" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Test score after intervention</div>
+      <div draggable="true" id="item3" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Patient received medication</div>
+      <div draggable="true" id="item4" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Blood pressure after treatment</div>
     </div>
-   <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)"
-     style="min-height:120px; border:2px solid blue; margin-bottom:10px; padding:5px; overflow:auto;">
-  <strong>Treatment</strong>
-</div>
-<div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)"
-     style="min-height:120px; border:2px solid green; padding:5px; overflow:auto;">
-  <strong>Outcome</strong>
-</div>
+
+    <!-- Right column: droppable boxes -->
+    <div id="right" style="width:45%;">
+      <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" 
+           style="min-height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px; overflow:auto; display:flex; flex-direction:column; gap:5px;">
+        <strong>Treatment</strong>
+      </div>
+      <div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" 
+           style="min-height:120px; border:2px dashed green; padding:5px; overflow:auto; display:flex; flex-direction:column; gap:5px;">
+        <strong>Outcome</strong>
+      </div>
     </div>
   </div>
 
-  <button onclick="checkAnswer()">Check Answers</button>
+  <!-- Check answers button -->
+  <button onclick="checkAnswer()" style="margin-top:10px;">Check Answers</button>
   <div id="result" style="margin-top:10px;"></div>
 
   <script>
+    // Allow drop
     function allowDrop(ev) { ev.preventDefault(); }
+
+    // Drag event
     function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
-    function drop(ev) { ev.preventDefault(); ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); }
 
-    document.querySelectorAll('#left div').forEach(function(div) { div.addEventListener('dragstart', drag); });
+    // Drop event: append the dragged item to the box
+    function drop(ev) { 
+      ev.preventDefault(); 
+      ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); 
+    }
 
+    // Attach dragstart event to each item
+    document.querySelectorAll('#left div').forEach(div => div.addEventListener('dragstart', drag));
+
+    // Check answers
     function checkAnswer() {
       let correct = { "item1":"treatment", "item2":"outcome", "item3":"treatment", "item4":"outcome" };
       let score = 0;
       for (let item in correct) {
-        if(document.getElementById(item).parentElement.id === correct[item]) { score += 1; }
+        let parentId = document.getElementById(item).parentElement.id;
+        if(parentId === correct[item]) { score += 1; }
       }
       document.getElementById('result').innerText = "You got " + score + " out of 4 correct!";
     }
   </script>
 </div>
-
-
-
 
 ## Matching Exercise: Treatment vs Outcome
 
