@@ -17,21 +17,15 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: exercises/ch1.qmd
-        text: Exercises
+      - href: lessons/Introduction.qmd
+        text: Lessons
   sidebar:
     style: "floating"
     contents:
       - section: "Content"
         contents:
           - index.qmd
-          - exercises/ch1.qmd
-          - exercises/ch3.qmd
-          - exercises/ch5.qmd
-          - exercises/ch10.qmd
-          - exercises/ch12.qmd
-          - exercises/ch13.qmd
-          - exercises/ch17.qmd
+          - lessons/Introduction.qmd
 
   page-footer: 
     left: "Built using Quarto Webr."

@@ -2,4 +2,4 @@
 
 ## Acknowledgement
 
-The website was built using [WebR repo](https://quarto-webr.thecoatlessprofessor.com/)
+The website was built using [WebR](https://quarto-webr.thecoatlessprofessor.com/)
