@@ -367,7 +367,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\nlibrary(palmerpenguins)\nlibrary(nycflights13)","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = penguins, aes(y = _____)) + \n  geom_bar()","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(penguins, \n       aes(x = _____, y = _____)) +\n  geom_point(aes(color = _____)) +\n   labs(\n    title = \"_____\",\n    x = \"Bill length (mm)\", y = \"Bill depth (g)\",\n    color = \"_____\"\n  ) ","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(penguins, \n       aes(x = _____, y = _____)) +\n  geom_point() + \n  facet_wrap(~_____) + \n  labs(\n    title = \"_____\",\n    x = \"Bill length (mm)\", y = \"Bill depth (mm)\")","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"# your code goes here","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(tidyverse)\nlibrary(palmerpenguins)\nlibrary(nycflights13)","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -2012,44 +2012,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="set-up" class="level2">
-<h2 class="anchored" data-anchor-id="set-up">Set up</h2>
-<p>We have already loaded the R packages you need for this tutorial. Once you start working in RStudio, you will run code like the code shown below to load the R packages you need.</p>
+<section id="what-is-causal-inference" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-causal-inference">What is Causal Inference</h2>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="exercises" class="level1">
-<h1>Exercises</h1>
-<p>All exercises are from <a href="https://r4ds.hadley.nz/">R for Data Science 2nd Edition</a>.</p>
-<section id="chapter-1-data-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-1-data-visualization">Chapter 1: Data visualization</h2>
 <p><br></p>
-<section id="ex-1-in-section-1.4.3" class="level3">
-<h3 class="anchored" data-anchor-id="ex-1-in-section-1.4.3"><a href="https://r4ds.hadley.nz/data-visualize.html#exercises-1">Ex 1 in Section 1.4.3</a></h3>
-<p>Fill in the blank to make a barplot of <code>species</code>, such that <code>species</code> is assigned to the y aesthetic.</p>
-<div id="qwebr-insertion-location-2"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><br></p>
-</section>
-<section id="ex-5-in-section-1.5.5" class="level3">
-<h3 class="anchored" data-anchor-id="ex-5-in-section-1.5.5"><a href="https://r4ds.hadley.nz/data-visualize.html#exercises-2">Ex 5 in Section 1.5.5</a></h3>
-<p>Make a scatterplot of <code>bill_depth_mm</code> vs.&nbsp;<code>bill_length_mm</code> and color the points by species (That is a scatterplot with bill depth on the y-axis and bill length on the x-axis). What does adding coloring by species reveal about the relationship between these two variables? What about faceting by species?</p>
-<div id="qwebr-insertion-location-3"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><br></p>
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><br></p>
-</section>
-<section id="open-code-chunk" class="level3">
-<h3 class="anchored" data-anchor-id="open-code-chunk">Open code chunk</h3>
-<p>Here is a code chunk in case you wish to play around with some code</p>
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
