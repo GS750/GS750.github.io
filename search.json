@@ -48,6 +48,18 @@
     ]
   },
   {
+    "objectID": "lessons/Introduction.html#match-treatment-vs-outcome",
+    "href": "lessons/Introduction.html#match-treatment-vs-outcome",
+    "title": "Introduction",
+    "section": "Match Treatment vs Outcome",
+    "text": "Match Treatment vs Outcome\nDrag the items on the left to the correct category on the right.\n\n\n&lt;div draggable=\"true\" id=\"item1\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Student got new method&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item2\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Test score after intervention&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item3\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Patient received medication&lt;/div&gt;\n&lt;div draggable=\"true\" id=\"item4\" style=\"padding:5px; margin:5px; border:1px solid black;\"&gt;Blood pressure after treatment&lt;/div&gt;\n\n\n&lt;div id=\"treatment\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" style=\"height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;\"&gt;\n  &lt;strong&gt;Treatment&lt;/strong&gt;\n&lt;/div&gt;\n&lt;div id=\"outcome\" ondrop=\"drop(event)\" ondragover=\"allowDrop(event)\" style=\"height:120px; border:2px dashed green; padding:5px;\"&gt;\n  &lt;strong&gt;Outcome&lt;/strong&gt;\n&lt;/div&gt;\n\n\n\nCheck Answers",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
