@@ -1,4 +1,4 @@
-# Bass Connections Summer Packet
+# Casual Causal Inference Introduction
 
 ## Acknowledgement
 
