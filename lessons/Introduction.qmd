@@ -17,7 +17,11 @@ Imagine you want to know whether a teaching method you've learned about in GS750
 
 **Causal inference** is all about answering that kind of question: *What actually causes what?* It’s the science of figuring out the effect of one thing on another.
 
-To do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method). One simple way to do that is a **randomized experiment**, where some students are randomly chosen to get the new method (the "treatment") and others are not (the "control"). Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.
+To do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method).
+
+One simple (although not always possible) way to do that is a **randomized experiment**, where individuals are randomly selected into "treatment" and "control" groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.
+
+For example some students are randomly chosen to get the new method (the "treatment") and others are not (the "control").
 
 So, causal inference is like being a detective for cause-and-effect: you look carefully at the data, make sure groups are comparable, and try to figure out whether a change in one thing really leads to a change in another.
 
