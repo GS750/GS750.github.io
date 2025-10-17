@@ -1,5 +1,5 @@
 ---
-title: "Chapter 1: Data visualization"
+title: "Introduction"
 webr:  
   show-startup-message: true    # Display status of webR initialization
   packages: ['ggplot2'] # Pre-install dependency
@@ -10,11 +10,20 @@ webr:
 
 ```{webr-r}
 #| context: setup
-
 library(tidyverse)
-library(palmerpenguins)
-library(nycflights13)
 ```
 
 <br>
 
+## Question
+
+Compute the difference in means between treated and control groups.
+
+<button onclick="document.getElementById('answer1').style.display='block'">
+Reveal correct answer
+</button>
+
+<div id="answer1" style="display:none; margin-top:10px;">
+💡 **Answer:**
+The difference in means is approximately **2.1** — same as the regression coefficient on `z`.
+</div>
