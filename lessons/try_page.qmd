@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "TRY out page"
 webr:  
   show-startup-message: true    # Display status of webR initialization
   packages: ['ggplot2'] # Pre-install dependency
@@ -72,13 +72,14 @@ Match each description on the left with the correct variable type on the right.
       <div draggable="true" id="item3" style="padding:5px; margin:5px; border:1px solid black;">Patient received medication</div>
       <div draggable="true" id="item4" style="padding:5px; margin:5px; border:1px solid black;">Blood pressure after treatment</div>
     </div>
-    <div id="right" style="width:45%;">
-      <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;">
-        <strong>Treatment</strong>
-      </div>
-      <div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed green; padding:5px;">
-        <strong>Outcome</strong>
-      </div>
+   <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)"
+     style="min-height:120px; border:2px solid blue; margin-bottom:10px; padding:5px; overflow:auto;">
+  <strong>Treatment</strong>
+</div>
+<div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)"
+     style="min-height:120px; border:2px solid green; padding:5px; overflow:auto;">
+  <strong>Outcome</strong>
+</div>
     </div>
   </div>
 
