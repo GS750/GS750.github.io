@@ -3,5 +3,5 @@ title: "Welcome"
 ---
 
 
-Welcome to casual introduction to Causal inference! 
+Welcome to the casual introduction to Causal Inference! 
 
