@@ -84,9 +84,8 @@ Match each description on the left with the correct variable type on the right.
 
 
 ## Drag-and-Drop Matching: Treatment vs Outcome
-
 <div class="drag-exercise" {=html}>
-  <div style="display:flex; justify-content:space-between; width:600px; font-family:sans-serif;">
+  <div style="display:flex; justify-content:space-between; width:650px; font-family:'Inter', sans-serif; color:#333;">
     <!-- Left column: draggable items -->
     <div id="left" style="width:45%;">
       <div draggable="true" id="item1" class="draggable">Student got new method</div>
@@ -107,47 +106,82 @@ Match each description on the left with the correct variable type on the right.
   </div>
 
   <!-- Buttons -->
-  <div style="margin-top:10px;">
-    <button onclick="checkAnswer()">Check Answers</button>
-    <button onclick="resetBoxes()">Reset</button>
+  <div style="margin-top:15px; display:flex; gap:10px;">
+    <button class="btn check" onclick="checkAnswer()">Check Answers</button>
+    <button class="btn reset" onclick="resetBoxes()">Reset</button>
   </div>
-  <div id="result" style="margin-top:10px; font-weight:bold;"></div>
+  <div id="result" style="margin-top:12px; font-weight:600;"></div>
 
   <style>
     .draggable {
-      padding:8px;
-      margin:6px;
-      border:1px solid #444;
-      border-radius:8px;
-      background:#f9f9f9;
-      box-shadow:2px 2px 4px rgba(0,0,0,0.1);
+      padding:10px 12px;
+      margin:6px 0;
+      border-radius:10px;
+      background:#f5f7ff;
+      border:1px solid #d0d7ff;
+      box-shadow:0 1px 3px rgba(0,0,0,0.08);
       cursor:grab;
-      transition:background 0.2s;
+      transition:all 0.2s ease;
+    }
+    .draggable:hover {
+      background:#e8edff;
+      transform:translateY(-2px);
+      box-shadow:0 3px 6px rgba(0,0,0,0.1);
     }
     .draggable:active {
       cursor:grabbing;
-      background:#eef;
+      background:#dbe3ff;
+      transform:scale(0.98);
     }
     .dropzone {
       min-height:120px;
-      border:2px dashed #999;
-      border-radius:8px;
-      padding:8px;
-      margin-bottom:12px;
+      border:2px dashed #ccc;
+      border-radius:12px;
+      padding:10px;
+      margin-bottom:14px;
       display:flex;
       flex-direction:column;
-      gap:6px;
+      gap:8px;
       background:#fafafa;
+      transition:all 0.3s ease;
     }
-    #treatment { border-color:#007bff; }
-    #outcome { border-color:#28a745; }
+    .dropzone:hover {
+      background:#f0f7ff;
+      border-color:#90b4f8;
+    }
+    #treatment { border-color:#90b4f8; background:#f8fbff; }
+    #outcome { border-color:#a8e6a1; background:#f9fff8; }
+    .btn {
+      padding:8px 14px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+      transition:background 0.2s, transform 0.2s;
+    }
+    .btn.check {
+      background:#5c7cfa;
+      color:white;
+    }
+    .btn.check:hover {
+      background:#4b6ef0;
+      transform:translateY(-2px);
+    }
+    .btn.reset {
+      background:#e8e8e8;
+    }
+    .btn.reset:hover {
+      background:#d5d5d5;
+      transform:translateY(-2px);
+    }
   </style>
 
   <script>
     function allowDrop(ev) {
-      // Only allow drop if target is a dropzone (not another draggable)
       if (ev.target.classList.contains("dropzone")) {
         ev.preventDefault();
+        ev.target.style.backgroundColor = "#eef6ff";
       }
     }
 
@@ -158,15 +192,22 @@ Match each description on the left with the correct variable type on the right.
     function drop(ev) {
       ev.preventDefault();
       const itemId = ev.dataTransfer.getData("text");
-      const target = ev.target;
-      // Only allow dropping into dropzones, not inside other items
-      if (target.classList.contains("dropzone")) {
+      const target = ev.target.closest(".dropzone"); // ensure drop only into zone
+      if (target) {
         target.appendChild(document.getElementById(itemId));
+        target.style.backgroundColor = ""; // reset highlight
       }
     }
 
-    // Attach dragstart event
-    document.querySelectorAll('.draggable').forEach(div => 
+    // Reset background on drag leave
+    document.addEventListener("dragleave", (e) => {
+      if (e.target.classList && e.target.classList.contains("dropzone")) {
+        e.target.style.backgroundColor = "";
+      }
+    });
+
+    // Attach dragstart events
+    document.querySelectorAll('.draggable').forEach(div =>
       div.addEventListener('dragstart', drag)
     );
 
@@ -178,10 +219,12 @@ Match each description on the left with the correct variable type on the right.
         let parentId = document.getElementById(item).parentElement.id;
         if (parentId === correct[item]) score++;
       }
-      document.getElementById('result').innerText = `You got ${score} out of 4 correct!`;
+      const res = document.getElementById('result');
+      res.innerText = `You got ${score} out of 4 correct!`;
+      res.style.color = score === 4 ? "#2e7d32" : "#d32f2f";
     }
 
-    // Reset boxes (return all items to left side)
+    // Reset boxes
     function resetBoxes() {
       const left = document.getElementById("left");
       document.querySelectorAll('.draggable').forEach(item => left.appendChild(item));
@@ -189,6 +232,7 @@ Match each description on the left with the correct variable type on the right.
     }
   </script>
 </div>
+
 
 
 ## Matching Exercise: Treatment vs Outcome
