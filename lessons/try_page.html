@@ -2035,13 +2035,41 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </section>
 <section id="question" class="level2">
 <h2 class="anchored" data-anchor-id="question">Question</h2>
-<p>Compute the difference in means between treated and control groups.</p>
-<button onclick="document.getElementById('answer1').style.display='block'">
-Reveal correct answer
+Compute the difference in means between treated and control groups. <!-- Stylish Reveal Button -->
+<style>
+.reveal-btn {
+  background-color: #4CAF50; /* green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reveal-btn:hover {
+  background-color: #45a049;  /* darker green on hover */
+  transform: scale(1.05);     /* slight grow effect */
+}
+
+.reveal-btn:active {
+  transform: scale(0.98);     /* shrink a little when clicked */
+}
+</style>
+<button class="reveal-btn" onclick="document.getElementById('answer1').style.display='block'">
+Reveal Correct Answer
 </button>
-<div id="answer1" style="display:none; margin-top:10px;">
+<div id="answer1" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
 <p>💡 <strong>Answer:</strong> The difference in means is approximately <strong>2.1</strong> — same as the regression coefficient on <code>z</code>.</p>
 </div>
+<style>
+#treatment, #outcome {
+  display: flex;
+  flex-direction: column;  /* stack items vertically */
+  gap: 5px;                /* space between items */
+}
+</style>
 <section id="answer" class="level3 reveal">
 <h3 class="anchored" data-anchor-id="answer">💡 Answer</h3>
 <p>The estimated average treatment effect is about <strong>2.1</strong> points.</p>
@@ -2113,48 +2141,64 @@ Reveal Answers
 </table>
 </details>
 </section>
-<section id="drag-and-drop-matching" class="level2">
-<h2 class="anchored" data-anchor-id="drag-and-drop-matching">Drag-and-Drop Matching</h2>
+<section id="drag-and-drop-matching-treatment-vs-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="drag-and-drop-matching-treatment-vs-outcome">Drag-and-Drop Matching: Treatment vs Outcome</h2>
 <div class="drag-exercise" {="html}">
   <div style="display:flex; justify-content:space-between; width:600px;">
+    <!-- Left column: draggable items -->
     <div id="left" style="width:45%;">
-      <div draggable="true" id="item1" style="padding:5px; margin:5px; border:1px solid black;">Student got new method</div>
-      <div draggable="true" id="item2" style="padding:5px; margin:5px; border:1px solid black;">Test score after intervention</div>
-      <div draggable="true" id="item3" style="padding:5px; margin:5px; border:1px solid black;">Patient received medication</div>
-      <div draggable="true" id="item4" style="padding:5px; margin:5px; border:1px solid black;">Blood pressure after treatment</div>
+      <div draggable="true" id="item1" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Student got new method</div>
+      <div draggable="true" id="item2" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Test score after intervention</div>
+      <div draggable="true" id="item3" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Patient received medication</div>
+      <div draggable="true" id="item4" style="padding:5px; margin:5px; border:1px solid black; cursor:grab;">Blood pressure after treatment</div>
     </div>
-   <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" style="min-height:120px; border:2px solid blue; margin-bottom:10px; padding:5px; overflow:auto;">
-  <strong>Treatment</strong>
-</div>
-<div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" style="min-height:120px; border:2px solid green; padding:5px; overflow:auto;">
-  <strong>Outcome</strong>
-</div>
+
+    <!-- Right column: droppable boxes -->
+    <div id="right" style="width:45%;">
+      <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" style="min-height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px; overflow:auto; display:flex; flex-direction:column; gap:5px;">
+        <strong>Treatment</strong>
+      </div>
+      <div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" style="min-height:120px; border:2px dashed green; padding:5px; overflow:auto; display:flex; flex-direction:column; gap:5px;">
+        <strong>Outcome</strong>
+      </div>
     </div>
   </div>
-<button onclick="checkAnswer()">Check Answers</button>
-<div id="result" style="margin-top:10px;">
 
-</div>
-<script>
+  <!-- Check answers button -->
+  <button onclick="checkAnswer()" style="margin-top:10px;">Check Answers</button>
+  <div id="result" style="margin-top:10px;"></div>
+
+  <script>
+    // Allow drop
     function allowDrop(ev) { ev.preventDefault(); }
+
+    // Drag event
     function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
-    function drop(ev) { ev.preventDefault(); ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); }
 
-    document.querySelectorAll('#left div').forEach(function(div) { div.addEventListener('dragstart', drag); });
+    // Drop event: append the dragged item to the box
+    function drop(ev) { 
+      ev.preventDefault(); 
+      ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); 
+    }
 
+    // Attach dragstart event to each item
+    document.querySelectorAll('#left div').forEach(div => div.addEventListener('dragstart', drag));
+
+    // Check answers
     function checkAnswer() {
       let correct = { "item1":"treatment", "item2":"outcome", "item3":"treatment", "item4":"outcome" };
       let score = 0;
       for (let item in correct) {
-        if(document.getElementById(item).parentElement.id === correct[item]) { score += 1; }
+        let parentId = document.getElementById(item).parentElement.id;
+        if(parentId === correct[item]) { score += 1; }
       }
       document.getElementById('result').innerText = "You got " + score + " out of 4 correct!";
     }
   </script>
-</section></main></div>
-
+</div>
+</section>
 <section id="matching-exercise-treatment-vs-outcome" class="level2">
-<h2 data-anchor-id="matching-exercise-treatment-vs-outcome">Matching Exercise: Treatment vs Outcome</h2>
+<h2 class="anchored" data-anchor-id="matching-exercise-treatment-vs-outcome">Matching Exercise: Treatment vs Outcome</h2>
 <p>Drag each variable to the correct box, then use the button below to calculate the effect of your treatment.</p>
 <div {="html}" style="display:flex; justify-content:space-between; width:600px; margin-bottom:20px;">
   <div id="left" style="width:45%;">
@@ -2212,7 +2256,7 @@ mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
 
 </section>
 
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -2625,7 +2669,7 @@ mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
       </a>
   </div>
 </nav>
- <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
