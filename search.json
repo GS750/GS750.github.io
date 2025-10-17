@@ -52,7 +52,7 @@
     "href": "lessons/try_page.html#question",
     "title": "TRY out page",
     "section": "Question",
-    "text": "Question\nCompute the difference in means between treated and control groups. \n\n\nReveal Correct Answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.\n\n\n\n💡 Answer\nThe estimated average treatment effect is about 2.1 points.",
+    "text": "Question\nCompute the difference in means between treated and control groups.\n\n\n\nReveal Correct Answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.",
     "crumbs": [
       "Home",
       "Content",
@@ -76,7 +76,7 @@
     "href": "lessons/try_page.html#drag-and-drop-matching-treatment-vs-outcome",
     "title": "TRY out page",
     "section": "Drag-and-Drop Matching: Treatment vs Outcome",
-    "text": "Drag-and-Drop Matching: Treatment vs Outcome\n\n  \n    \n    \n      Student got new method\n      Test score after intervention\n      Patient received medication\n      Blood pressure after treatment\n    \n\n    \n    \n      \n        Treatment\n      \n      \n        Outcome\n      \n    \n  \n\n  \n  Check Answers",
+    "text": "Drag-and-Drop Matching: Treatment vs Outcome\n\n  \n\n  \n    \n    \n      Student got new method\n      Test score after intervention\n      Patient received medication\n      Blood pressure after treatment\n    \n\n    \n    \n      \n        Treatment\n      \n      \n        Outcome\n      \n    \n  \n\n  Check Answers",
     "crumbs": [
       "Home",
       "Content",
