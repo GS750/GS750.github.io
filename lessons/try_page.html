@@ -2153,6 +2153,62 @@ Reveal Answers
     }
   </script>
 </div>
+</section>
+<section id="matching-exercise-treatment-vs-outcome" class="level2">
+<h2 class="anchored" data-anchor-id="matching-exercise-treatment-vs-outcome">Matching Exercise: Treatment vs Outcome</h2>
+<p>Drag each variable to the correct box, then use the button below to calculate the effect of your treatment.</p>
+<div {="html}" style="display:flex; justify-content:space-between; width:600px; margin-bottom:20px;">
+  <div id="left" style="width:45%;">
+    <div draggable="true" id="var1" style="padding:5px; margin:5px; border:1px solid black;">Student got new method</div>
+    <div draggable="true" id="var2" style="padding:5px; margin:5px; border:1px solid black;">Test score after intervention</div>
+  </div>
+  <div id="right" style="width:45%;">
+    <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;">
+      <strong>Treatment</strong>
+    </div>
+    <div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed green; padding:5px;">
+      <strong>Outcome</strong>
+    </div>
+  </div>
+</div>
+<button onclick="computeEffect()">
+Compute Effect
+</button>
+<div id="effectResult" style="margin-top:10px;">
+
+</div>
+<script>
+function allowDrop(ev) { ev.preventDefault(); }
+function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+function drop(ev) { ev.preventDefault(); ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); }
+
+// attach drag events
+document.querySelectorAll('#left div').forEach(div => div.addEventListener('dragstart', drag));
+
+function computeEffect() {
+  // find which div is in treatment/outcome boxes
+  let treatment = document.getElementById("treatment").children[1]?.innerText || "";
+  let outcome   = document.getElementById("outcome").children[1]?.innerText || "";
+  
+  if(treatment === "" || outcome === "") {
+    document.getElementById("effectResult").innerText = "Please drag one variable into each box!";
+    return;
+  }
+
+  // Call webR to compute difference in means
+  const rCode = `
+df <- data.frame(
+  student = 1:20,
+  treatment = rbinom(20,1,0.5),
+  score = 5 + 2*treatment + rnorm(20)
+)
+mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
+  `;
+  webr.evalR(rCode).then(res => {
+    document.getElementById("effectResult").innerText = "Estimated effect (difference in means): " + res;
+  });
+}
+</script>
 
 
 </section>
