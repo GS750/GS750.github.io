@@ -7,11 +7,11 @@ format:
   
 website:
   page-navigation: true
-  title: "Bass Connections Summer Exercises"
+  title: "Casual Causal Inference"
   search: true
   reader-mode: true
-  site-url: "https://bass-su2025.github.io/"
-  repo-url: https://github.com/bass-su2025/bass-su2025.github.io
+  site-url: "https://GS750.github.io/"
+  repo-url: https://github.com/GS750/GS750.github.io
   repo-actions: [edit, issue]
   navbar:
     left:
