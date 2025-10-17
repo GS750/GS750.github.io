@@ -1,15 +1,9 @@
 ---
-title: "Introduction"
+title: "What is Causal Inference?"
 webr:  
   show-startup-message: true    # Display status of webR initialization
   packages: ['ggplot2'] # Pre-install dependency
 ---
-
-```{webr-r}
-#| context: setup
-library(tidyverse)
-```
-
 
 ## What is Causal Inference
 
