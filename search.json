@@ -28,7 +28,19 @@
     "href": "lessons/Introduction.html#question",
     "title": "Introduction",
     "section": "Question",
-    "text": "Question\nCompute the difference in means between treated and control groups.\n\nReveal correct answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.",
+    "text": "Question\nCompute the difference in means between treated and control groups.\n\nReveal correct answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.\n\n\n💡 Answer\nThe estimated average treatment effect is about 2.1 points.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lessons/Introduction.html#instructions",
+    "href": "lessons/Introduction.html#instructions",
+    "title": "Introduction",
+    "section": "Instructions",
+    "text": "Instructions\nMatch each description on the left with the correct variable type on the right.\n\nTreatment = variable that we manipulate\n\nOutcome = variable we measure\n\n\n\n\nDescription\nMatch\n\n\n\n\n1. Did the student receive the new teaching method?\n❓\n\n\n2. Test score after the intervention\n❓\n\n\n3. Whether the patient got a medication\n❓\n\n\n4. Blood pressure after treatment\n❓\n\n\n\n\n\nReveal Answers\n\n\n\n\nDescription\nAnswer\n\n\n\n\n1. Did the student receive the new teaching method?\nTreatment\n\n\n2. Test score after the intervention\nOutcome\n\n\n3. Whether the patient got a medication\nTreatment\n\n\n4. Blood pressure after treatment\nOutcome",
     "crumbs": [
       "Home",
       "Content",
