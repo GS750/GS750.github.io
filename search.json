@@ -100,7 +100,7 @@
     "href": "lessons/try_page.html#matching-exercise-treatment-vs-outcome",
     "title": "TRY out page",
     "section": "Matching Exercise: Treatment vs Outcome",
-    "text": "Matching Exercise: Treatment vs Outcome\nDrag each variable to the correct box, then use the button below to calculate the effect of your treatment.\n\n  \n    Student got new method\n    Test score after intervention\n  \n  \n    \n      Treatment\n    \n    \n      Outcome\n    \n  \n\n\nCompute Effect\n\n\n\n\n\n\n  \n\n  \n    \n      Student got new method\n      Test score after intervention\n      Patient received medication\n      Blood pressure after treatment\n    \n\n    \n      \n        Treatment\n      \n      \n        Outcome\n      \n    \n  \n\n  \n    Check Answers\n    Reset",
+    "text": "Matching Exercise: Treatment vs Outcome\nDrag each variable to the correct box, then use the button below to calculate the effect of your treatment.\n\n  \n    Student got new method\n    Test score after intervention\n  \n  \n    \n      Treatment\n    \n    \n      Outcome\n    \n  \n\n\nCompute Effect",
     "crumbs": [
       "Home",
       "Content",
