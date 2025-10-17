@@ -2,25 +2,37 @@
   {
     "objectID": "lessons/Introduction.html",
     "href": "lessons/Introduction.html",
-    "title": "Chapter 1: Data visualization",
+    "title": "Introduction",
     "section": "",
     "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
-      "Chapter 1: Data visualization"
+      "Introduction"
     ]
   },
   {
     "objectID": "lessons/Introduction.html#what-is-causal-inference",
     "href": "lessons/Introduction.html#what-is-causal-inference",
-    "title": "Chapter 1: Data visualization",
+    "title": "Introduction",
     "section": "",
     "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Home",
       "Content",
-      "Chapter 1: Data visualization"
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "lessons/Introduction.html#question",
+    "href": "lessons/Introduction.html#question",
+    "title": "Introduction",
+    "section": "Question",
+    "text": "Question\nCompute the difference in means between treated and control groups.\n\nReveal correct answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction"
     ]
   },
   {
