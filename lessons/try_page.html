@@ -2133,192 +2133,158 @@ Reveal Answers
 </section>
 <section id="drag-and-drop-matching-treatment-vs-outcome" class="level2">
 <h2 class="anchored" data-anchor-id="drag-and-drop-matching-treatment-vs-outcome">Drag-and-Drop Matching: Treatment vs Outcome</h2>
-<div class="drag-exercise" {="html}" style="font-family:sans-serif;">
-  <style>
-    /* Draggable items */
-    .drag-item {
-      padding: 10px;
-      margin: 5px;
-      border: 2px solid #555;
-      border-radius: 8px;
-      background-color: #f9f9f9;
-      cursor: grab;
-      transition: background-color 0.2s, transform 0.1s;
-    }
-    .drag-item:active {
-      transform: scale(0.98);
-      background-color: #e0e0e0;
-    }
-
-    /* Droppable boxes */
-    .drop-box {
-      min-height: 120px;
-      border: 2px dashed #555;
-      border-radius: 10px;
-      padding: 10px;
-      overflow: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      background-color: #f0f8ff;
-      transition: background-color 0.2s;
-    }
-    .drop-box.treatment { border-color: #3498db; background-color: #eaf4fc; }
-    .drop-box.outcome   { border-color: #2ecc71; background-color: #e8f9ea; }
-    .drop-box.highlight { background-color: #fffae6; }
-
-    /* Layout */
-    #drag-container { display: flex; justify-content: space-between; width: 600px; }
-    #left { width: 45%; }
-    #right { width: 45%; }
-
-    /* Button */
-    .check-btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s, transform 0.2s;
-      margin-top: 10px;
-    }
-    .check-btn:hover { background-color: #45a049; transform: scale(1.05); }
-    .check-btn:active { transform: scale(0.98); }
-  </style>
-
-  <div id="drag-container">
+<div class="drag-exercise" {="html}">
+  <div style="display:flex; justify-content:space-between; width:600px; font-family:sans-serif;">
     <!-- Left column: draggable items -->
-    <div id="left">
-      <div draggable="true" id="item1" class="drag-item">Student got new method</div>
-      <div draggable="true" id="item2" class="drag-item">Test score after intervention</div>
-      <div draggable="true" id="item3" class="drag-item">Patient received medication</div>
-      <div draggable="true" id="item4" class="drag-item">Blood pressure after treatment</div>
+    <div id="left" style="width:45%;">
+      <div draggable="true" id="item1" class="draggable">Student got new method</div>
+      <div draggable="true" id="item2" class="draggable">Test score after intervention</div>
+      <div draggable="true" id="item3" class="draggable">Patient received medication</div>
+      <div draggable="true" id="item4" class="draggable">Blood pressure after treatment</div>
     </div>
 
     <!-- Right column: droppable boxes -->
-    <div id="right">
-      <div id="treatment" class="drop-box treatment" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div id="right" style="width:45%;">
+      <div id="treatment" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
         <strong>Treatment</strong>
       </div>
-      <div id="outcome" class="drop-box outcome" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div id="outcome" class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)">
         <strong>Outcome</strong>
       </div>
     </div>
   </div>
 
-  <button class="check-btn" onclick="checkAnswer()">Check Answers</button>
+  <!-- Buttons -->
+  <div style="margin-top:10px;">
+    <button onclick="checkAnswer()">Check Answers</button>
+    <button onclick="resetBoxes()">Reset</button>
+  </div>
   <div id="result" style="margin-top:10px; font-weight:bold;"></div>
 
+  <style>
+    .draggable {
+      padding:8px;
+      margin:6px;
+      border:1px solid #444;
+      border-radius:8px;
+      background:#f9f9f9;
+      box-shadow:2px 2px 4px rgba(0,0,0,0.1);
+      cursor:grab;
+      transition:background 0.2s;
+    }
+    .draggable:active {
+      cursor:grabbing;
+      background:#eef;
+    }
+    .dropzone {
+      min-height:120px;
+      border:2px dashed #999;
+      border-radius:8px;
+      padding:8px;
+      margin-bottom:12px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      background:#fafafa;
+    }
+    #treatment { border-color:#007bff; }
+    #outcome { border-color:#28a745; }
+  </style>
+
   <script>
-    // Allow drop only on drop-box
     function allowDrop(ev) {
-      // only allow if the drop target *is* a drop-box
-      let target = ev.target;
-      while (target && !target.classList.contains('drop-box')) {
-        target = target.parentElement;
-      }
-      if (target && target.classList.contains('drop-box')) {
+      // Only allow drop if target is a dropzone (not another draggable)
+      if (ev.target.classList.contains("dropzone")) {
         ev.preventDefault();
       }
     }
 
-    // Drag start
     function drag(ev) {
       ev.dataTransfer.setData("text", ev.target.id);
     }
 
-    // Drop: always find the nearest drop-box ancestor
     function drop(ev) {
       ev.preventDefault();
-      const draggedId = ev.dataTransfer.getData("text");
-      const draggedEl = document.getElementById(draggedId);
-
-      let dropTarget = ev.target;
-      while (dropTarget && !dropTarget.classList.contains('drop-box')) {
-        dropTarget = dropTarget.parentElement;
-      }
-
-      // only drop if it's a valid drop-box
-      if (dropTarget && dropTarget.classList.contains('drop-box')) {
-        dropTarget.appendChild(draggedEl);
+      const itemId = ev.dataTransfer.getData("text");
+      const target = ev.target;
+      // Only allow dropping into dropzones, not inside other items
+      if (target.classList.contains("dropzone")) {
+        target.appendChild(document.getElementById(itemId));
       }
     }
 
-    // Attach dragstart events
-    document.querySelectorAll('.drag-item').forEach(div =>
+    // Attach dragstart event
+    document.querySelectorAll('.draggable').forEach(div => 
       div.addEventListener('dragstart', drag)
     );
 
     // Check answers
     function checkAnswer() {
-      const correct = { "item1": "treatment", "item2": "outcome", "item3": "treatment", "item4": "outcome" };
+      let correct = { "item1":"treatment", "item2":"outcome", "item3":"treatment", "item4":"outcome" };
       let score = 0;
       for (let item in correct) {
-        const parentId = document.getElementById(item).parentElement.id;
-        if (parentId === correct[item]) { score += 1; }
+        let parentId = document.getElementById(item).parentElement.id;
+        if (parentId === correct[item]) score++;
       }
-      document.getElementById('result').innerText = "You got " + score + " out of 4 correct!";
+      document.getElementById('result').innerText = `You got ${score} out of 4 correct!`;
+    }
+
+    // Reset boxes (return all items to left side)
+    function resetBoxes() {
+      const left = document.getElementById("left");
+      document.querySelectorAll('.draggable').forEach(item => left.appendChild(item));
+      document.getElementById('result').innerText = "";
     }
   </script>
 </div>
 </section>
 <section id="matching-exercise-treatment-vs-outcome" class="level2">
 <h2 class="anchored" data-anchor-id="matching-exercise-treatment-vs-outcome">Matching Exercise: Treatment vs Outcome</h2>
-<p>Drag each variable to the correct box, then use the button below to calculate the effect of your treatment.</p>
-<div {="html}" style="display:flex; justify-content:space-between; width:600px; margin-bottom:20px;">
-  <div id="left" style="width:45%;">
-    <div draggable="true" id="var1" style="padding:5px; margin:5px; border:1px solid black;">Student got new method</div>
-    <div draggable="true" id="var2" style="padding:5px; margin:5px; border:1px solid black;">Test score after intervention</div>
-  </div>
-  <div id="right" style="width:45%;">
-    <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;">
-      <strong>Treatment</strong>
-    </div>
-    <div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed green; padding:5px;">
-      <strong>Outcome</strong>
-    </div>
-  </div>
-</div>
-<button onclick="computeEffect()">
-Compute Effect
-</button>
-<div id="effectResult" style="margin-top:10px;">
-
-</div>
-<script>
-function allowDrop(ev) { ev.preventDefault(); }
-function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
-function drop(ev) { ev.preventDefault(); ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); }
-
-// attach drag events
-document.querySelectorAll('#left div').forEach(div => div.addEventListener('dragstart', drag));
-
-function computeEffect() {
-  // find which div is in treatment/outcome boxes
-  let treatment = document.getElementById("treatment").children[1]?.innerText || "";
-  let outcome   = document.getElementById("outcome").children[1]?.innerText || "";
-  
-  if(treatment === "" || outcome === "") {
-    document.getElementById("effectResult").innerText = "Please drag one variable into each box!";
-    return;
-  }
-
-  // Call webR to compute difference in means
-  const rCode = `
-df <- data.frame(
-  student = 1:20,
-  treatment = rbinom(20,1,0.5),
-  score = 5 + 2*treatment + rnorm(20)
-)
-mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
-  `;
-  webr.evalR(rCode).then(res => {
-    document.getElementById("effectResult").innerText = "Estimated effect (difference in means): " + res;
-  });
-}
-</script>
+<!-- Drag each variable to the correct box, then use the button below to calculate the effect of your treatment. -->
+<!-- <div {=html} style="display:flex; justify-content:space-between; width:600px; margin-bottom:20px;"> -->
+<!--   <div id="left" style="width:45%;"> -->
+<!--     <div draggable="true" id="var1" style="padding:5px; margin:5px; border:1px solid black;">Student got new method</div> -->
+<!--     <div draggable="true" id="var2" style="padding:5px; margin:5px; border:1px solid black;">Test score after intervention</div> -->
+<!--   </div> -->
+<!--   <div id="right" style="width:45%;"> -->
+<!--     <div id="treatment" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed blue; margin-bottom:10px; padding:5px;"> -->
+<!--       <strong>Treatment</strong> -->
+<!--     </div> -->
+<!--     <div id="outcome" ondrop="drop(event)" ondragover="allowDrop(event)" style="height:120px; border:2px dashed green; padding:5px;"> -->
+<!--       <strong>Outcome</strong> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </div> -->
+<!-- <button onclick="computeEffect()">Compute Effect</button> -->
+<!-- <div id="effectResult" style="margin-top:10px;"></div> -->
+<!-- <script> -->
+<!-- function allowDrop(ev) { ev.preventDefault(); } -->
+<!-- function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); } -->
+<!-- function drop(ev) { ev.preventDefault(); ev.target.appendChild(document.getElementById(ev.dataTransfer.getData("text"))); } -->
+<!-- // attach drag events -->
+<!-- document.querySelectorAll('#left div').forEach(div => div.addEventListener('dragstart', drag)); -->
+<!-- function computeEffect() { -->
+<!--   // find which div is in treatment/outcome boxes -->
+<!--   let treatment = document.getElementById("treatment").children[1]?.innerText || ""; -->
+<!--   let outcome   = document.getElementById("outcome").children[1]?.innerText || ""; -->
+<!--   if(treatment === "" || outcome === "") { -->
+<!--     document.getElementById("effectResult").innerText = "Please drag one variable into each box!"; -->
+<!--     return; -->
+<!--   } -->
+<!--   // Call webR to compute difference in means -->
+<!--   const rCode = ` -->
+<!-- df <- data.frame( -->
+<!--   student = 1:20, -->
+<!--   treatment = rbinom(20,1,0.5), -->
+<!--   score = 5 + 2*treatment + rnorm(20) -->
+<!-- ) -->
+<!-- mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0]) -->
+<!--   `; -->
+<!--   webr.evalR(rCode).then(res => { -->
+<!--     document.getElementById("effectResult").innerText = "Estimated effect (difference in means): " + res; -->
+<!--   }); -->
+<!-- } -->
+<!-- </script> -->
 
 
 </section>
