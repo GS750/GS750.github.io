@@ -2133,17 +2133,130 @@ Reveal Answers
 </section>
 <section id="drag-and-drop-matching-treatment-vs-outcome" class="level2">
 <h2 class="anchored" data-anchor-id="drag-and-drop-matching-treatment-vs-outcome">Drag-and-Drop Matching: Treatment vs Outcome</h2>
-&lt;div class=“drag-exercise” {=html} style=“font-family:sans-serif;”&gt;
-<style>
-<p>/* Draggable items */ .drag-item { padding: 10px; margin: 5px; border: 2px solid #555; border-radius: 8px; background-color: #f9f9f9; cursor: grab; transition: background-color 0.2s, transform 0.1s; } .drag-item:active { transform: scale(0.98); background-color: #e0e0e0; }</p>
-<p>/* Droppable boxes */ .drop-box { min-height: 120px; border: 2px dashed #555; border-radius: 10px; padding: 10px; overflow:auto; display:flex; flex-direction: column; gap:5px; background-color: #f0f8ff; transition: background-color 0.2s; } .drop-box.treatment { border-color: #3498db; background-color:#eaf4fc;} .drop-box.outcome { border-color: #2ecc71; background-color:#e8f9ea;} .drop-box.highlight { background-color: #fffae6; }</p>
-<p>/* Layout */ #drag-container { display:flex; justify-content:space-between; width:600px; } #left { width:45%; } #right { width:45%; }</p>
-<p>/* Button */ .check-btn { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; transition: background-color 0.3s, transform 0.2s;</p>
+<div class="drag-exercise" {="html}" style="font-family:sans-serif;">
+  <style>
+    /* Draggable items */
+    .drag-item {
+      padding: 10px;
+      margin: 5px;
+      border: 2px solid #555;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      cursor: grab;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+    .drag-item:active {
+      transform: scale(0.98);
+      background-color: #e0e0e0;
+    }
+
+    /* Droppable boxes */
+    .drop-box {
+      min-height: 120px;
+      border: 2px dashed #555;
+      border-radius: 10px;
+      padding: 10px;
+      overflow:auto;
+      display:flex;
+      flex-direction: column;
+      gap:5px;
+      background-color: #f0f8ff;
+      transition: background-color 0.2s;
+    }
+    .drop-box.treatment { border-color: #3498db; background-color:#eaf4fc;}
+    .drop-box.outcome   { border-color: #2ecc71; background-color:#e8f9ea;}
+    .drop-box.highlight { background-color: #fffae6; }
+
+    /* Layout */
+    #drag-container { display:flex; justify-content:space-between; width:600px; }
+    #left { width:45%; }
+    #right { width:45%; }
+
+    /* Button */
+    .check-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top:10px;
+    }
+    .check-btn:hover { background-color: #45a049; transform: scale(1.05);}
+    .check-btn:active { transform: scale(0.98);}
+  </style>
+
+  <div id="drag-container">
+    <!-- Left column: draggable items -->
+    <div id="left">
+      <div draggable="true" id="item1" class="drag-item">Student got new method</div>
+      <div draggable="true" id="item2" class="drag-item">Test score after intervention</div>
+      <div draggable="true" id="item3" class="drag-item">Patient received medication</div>
+      <div draggable="true" id="item4" class="drag-item">Blood pressure after treatment</div>
+    </div>
+
+    <!-- Right column: droppable boxes -->
+    <div id="right">
+      <div id="treatment" class="drop-box treatment" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <strong>Treatment</strong>
+      </div>
+      <div id="outcome" class="drop-box outcome" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <strong>Outcome</strong>
+      </div>
+    </div>
+  </div>
+
+  <button class="check-btn" onclick="checkAnswer()">Check Answers</button>
+  <div id="result" style="margin-top:10px; font-weight:bold;"></div>
+
+  <script>
+    // Allow drop only on drop-box
+    function allowDrop(ev) { 
+      ev.preventDefault(); 
+      if (!ev.target.classList.contains('drop-box')) return false;
+    }
+
+    // Drag start
+    function drag(ev) { ev.dataTransfer.setData("text", ev.target.id); }
+
+    // Drop: always append to nearest drop-box
+    function drop(ev) { 
+      ev.preventDefault(); 
+      const draggedId = ev.dataTransfer.getData("text");
+      const draggedEl = document.getElementById(draggedId);
+
+      let dropTarget = ev.target;
+      while(dropTarget && !dropTarget.classList.contains('drop-box')) {
+        dropTarget = dropTarget.parentElement;
+      }
+
+      if(dropTarget) {
+        dropTarget.appendChild(draggedEl);
+      }
+    }
+
+    // Attach dragstart events
+    document.querySelectorAll('#left .drag-item').forEach(div => div.addEventListener('dragstart', drag));
+
+    // Check answers
+    function checkAnswer() {
+      const correct = { "item1":"treatment", "item2":"outcome", "item3":"treatment", "item4":"outcome" };
+      let score = 0;
+      for (let item in correct) {
+        const parentId = document.getElementById(item).parentElement.id;
+        if(parentId === correct[item]) { score += 1; }
+      }
+      document.getElementById('result').innerText = "You got " + score + " out of 4 correct!";
+    }
+  </script>
+</div>
 </section>
 <section id="matching-exercise-treatment-vs-outcome" class="level2">
-<h2>Matching Exercise: Treatment vs Outcome</h2>
+<h2 class="anchored" data-anchor-id="matching-exercise-treatment-vs-outcome">Matching Exercise: Treatment vs Outcome</h2>
 <p>Drag each variable to the correct box, then use the button below to calculate the effect of your treatment.</p>
-<div {=html} style="display:flex; justify-content:space-between; width:600px; margin-bottom:20px;">
+<div {="html}" style="display:flex; justify-content:space-between; width:600px; margin-bottom:20px;">
   <div id="left" style="width:45%;">
     <div draggable="true" id="var1" style="padding:5px; margin:5px; border:1px solid black;">Student got new method</div>
     <div draggable="true" id="var2" style="padding:5px; margin:5px; border:1px solid black;">Test score after intervention</div>
@@ -2195,19 +2308,12 @@ mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
   });
 }
 </script>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Casual Causal Inference</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Casual Causal Inference</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uZXh0">What is Causal Inference?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1wcmV2">Welcome</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMQ==">Content</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9pbmRleC5odG1sV2VsY29tZQ==">Welcome</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9sZXNzb25zL3RyeV9wYWdlLmh0bWxUUlktb3V0LXBhZ2U=">TRY out page</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9sZXNzb25zL0ludHJvZHVjdGlvbi5odG1sV2hhdC1pcy1DYXVzYWwtSW5mZXJlbmNlPw==">What is Causal Inference?</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG9tZQ==">Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29ucw==">Lessons</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvSW50cm9kdWN0aW9uLmh0bWw=">/lessons/Introduction.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLUNvbnRlbnQ=">Content</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLVRSWS1vdXQtcGFnZQ==">TRY out page</span></p>
-<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWxlZnQ=">
-<p>Built using Quarto Webr.</p>
-</div>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">TRY out page – Casual Causal Inference</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">TRY out page – Casual Causal Inference</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">TRY out page – Casual Causal Inference</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Casual Causal Inference</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
-</div>
+
+
 </section>
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -2609,12 +2715,12 @@ mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a  href="/index.html" class="pagination-link" aria-label="Welcome">
+      <a href="../index.html" class="pagination-link" aria-label="Welcome">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a  href="/lessons/Introduction.html" class="pagination-link" aria-label="What is Causal Inference?">
+      <a href="../lessons/Introduction.html" class="pagination-link" aria-label="What is Causal Inference?">
         <span class="nav-page-text">What is Causal Inference?</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -2623,19 +2729,16 @@ mean(df$score[df$treatment==1]) - mean(df$score[df$treatment==0])
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      <div class='footer-contents'>Built using Quarto Webr.</div>  
-    </div>   
+<p>Built using Quarto Webr.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/GS750/GS750.github.io/edit/main/lessons/try_page.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/GS750/GS750.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/coatless/quarto-webr">
-      <i 
-  class="bi bi-github" 
-  role="img" 
->
+      <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
@@ -2760,7 +2863,7 @@ qwebrInstance.then(
 );
 </script>
 
-</body>
 
-</html>
-</style></section></main></div><footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/GS750/GS750.github.io/edit/main/lessons/try_page.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/GS750/GS750.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+
+
+</body></html>
