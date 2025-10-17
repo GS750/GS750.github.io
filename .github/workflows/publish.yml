@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -22,5 +22,6 @@ jobs:
         with:
           personal_token: ${{ secrets.GH_PAT }}
           external_repository: GS750/GS750.github.io
+          publish_dir: ./_site
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
