@@ -27,3 +27,9 @@ Reveal correct answer
 💡 **Answer:**
 The difference in means is approximately **2.1** — same as the regression coefficient on `z`.
 </div>
+
+::: {.reveal}
+### 💡 Answer
+The estimated average treatment effect is about **2.1** points.
+:::
+
