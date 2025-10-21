@@ -2350,23 +2350,23 @@ Reveal Answers
 <!--   }); -->
 <!-- } -->
 <!-- </script> -->
-<div id="question">
-<p>
+<div id="question" style="font-family: sans-serif; max-width: 500px; margin: 20px auto; padding: 20px; border: 2px solid #4A90E2; border-radius: 10px; background-color: #F0F8FF;">
+<p style="font-size: 16px;">
 Suppose a randomized experiment gives the following group averages:
 </p>
-<ul>
+<ul style="font-size: 16px; line-height: 1.5;">
 <li>
-Treatment Group average: 89.3
+<strong>Treatment Group average:</strong> 89.3
 </li>
 <li>
-Control Group average: 81.4
+<strong>Control Group average:</strong> 81.4
 </li>
 </ul>
-<p>
+<p style="font-size: 16px;">
 What is the difference between the Treatment and Control group averages?
 </p>
-<input type="number" id="answer" placeholder="Enter your answer"> <button onclick="checkAnswer()">Check Answer</button>
-<p id="feedback">
+<input type="number" id="answer" placeholder="Enter your answer" style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;"> <button onclick="checkAnswer()" style="font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;">Check Answer</button>
+<p id="feedback" style="font-size: 16px; margin-top: 10px;">
 </p>
 </div>
 <script>
@@ -2382,7 +2382,7 @@ function checkAnswer() {
     feedback.textContent = "Correct! 🎉";
     feedback.style.color = "green";
   } else {
-    feedback.textContent = `Not quite. Try again!`;
+    feedback.textContent = "Not quite. Try again!";
     feedback.style.color = "red";
   }
 }
