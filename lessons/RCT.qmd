@@ -1,7 +1,7 @@
 ---
 title: "Randomized Experiments"
-webr:  
-  show-startup-message: false    # Display status of webR initialization
+webr:
+show-startup-message: false \# Display status of webR initialization
 ---
 
 Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?
@@ -10,13 +10,12 @@ To do this, researchers try to compare groups that are as similar as possible �
 
 One simple (although not always possible) way to do that is a **randomized experiment**, where individuals are randomly selected into *treatment* and *control* groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.
 
+[![](/images/randomized-controlled-trial.webp)](https://www.simplypsychology.org/randomized-controlled-trial.html)
+
 For example, you might randomly assign some students to get the new method (the "treatment") and others to continue with the old method (the "control").
 
 ::: {.callout-note appearance="simple"}
-
 ## Definition
 
-A *randomized experiment* refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.
-
+A **randomized experiment** refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.
 :::
-
