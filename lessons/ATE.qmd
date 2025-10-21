@@ -1,0 +1,42 @@
+---
+title: "Treatment Effect Estimation"
+webr:
+show-startup-message: false \# Display status of webR initialization
+---
+
+# How can we estimate treatment effect?
+
+After performing a randomized experiment, we can **directly compare the two groups** by looking at the difference in their average outcomes.
+
+**Example:** Suppose a school wants to test whether a new study program improves test scores. They randomly assign 10 students to the new program (**Treatment Group**) and 10 students to the regular program (**Control Group**).
+
+| Group             | Test Scores                               |
+|------------------|-------------------------------------------|
+| Treatment Group   | 88, 90, 85, 92, 87, 91, 89, 93, 90, 88   |
+| Control Group     | 80, 82, 78, 85, 81, 79, 83, 84, 82, 80   |
+
+**Step 1: Calculate the average score**
+
+- **Treatment Group average:**  
+$$\frac{88 + 90 + 85 + 92 + 87 + 91 + 89 + 93 + 90 + 88}{10} = 89.3$$
+
+- **Control Group average:**  
+$$
+\frac{80 + 82 + 78 + 85 + 81 + 79 + 83 + 84 + 82 + 80}{10} = 81.4
+$$
+
+**Step 2: Compare the averages**
+
+The difference is:  
+$89.3 - 81.4 = 7.9 \text{ points}$
+
+Since the students were randomly assigned, we can be confident that this difference is **caused by the new study program** rather than other factors.
+
+
+::: {.callout-warning appearance="simple"}
+This gives us a single-number estimate of the difference between the groups. However, **we can’t yet conclude whether this difference is statistically significant**. Don’t worry — future statistics classes will teach us how to test that! 🙂
+:::
+
+## Try it yourself!
+
+
