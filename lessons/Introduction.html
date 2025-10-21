@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../lessons/Correlation_causation.html" rel="next">
+<link href="../lessons/RCT.html" rel="next">
 <link href="../lessons/try_page.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -131,8 +131,8 @@ window.Quarto = {
 <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../lessons/Correlation_causation.html"> 
-<span class="menu-text">Correlation does not equal causation</span></a>
+    <a class="nav-link" href="../lessons/RCT.html"> 
+<span class="menu-text">Randomized Experiments</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -195,8 +195,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/Correlation_causation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Correlation does not Equal Causation</span></a>
+  <a href="../lessons/RCT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Randomized Experiments</span></a>
   </div>
 </li>
       </ul>
@@ -231,16 +231,31 @@ window.Quarto = {
 
 <section id="what-is-causal-inference" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-causal-inference">What is Causal Inference</h2>
-<p>Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?</p>
-<p><strong>Causal inference</strong> is all about answering that kind of question: <em>What actually causes what?</em> It’s the science of figuring out the effect of one thing on another.</p>
 <p>Consider the following plot<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
 <p><img src="../images/fashion_lecture_salary.png" class="img-fluid"></p>
 <p>What is the reported correlation coefficient (<span class="math inline">\(r^2\)</span>) value?</p>
 <button class="reveal-btn" onclick="document.getElementById('answer1').style.display='block'">
-Reveal Correct Answer
+<p>Reveal Correct Answer</p>
 </button>
 <div id="answer1" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
 <p>💡 <strong>Answer:</strong> <span class="math inline">\(r^2 = 0.954\)</span>.</p>
+</div>
+<p>Consider the following AI-generated explanation for an observed trend with a high correlation<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
+<p><em>“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”</em> Sounds a bit far-fetched, doesn’t it?</p>
+<p>What we’re seeing here is a classic example of <strong>correlation not equaling causation</strong> — just because two things move together doesn’t mean one caused the other.</p>
+<p><strong>Causal inference</strong> is all about answering the question: <em>What actually causes what?</em> It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.</p>
+<div id="tip-example" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explore more spurious correlations at this <a href="https://www.tylervigen.com/spurious-correlations">link</a>.</p>
+</div>
 </div>
 
 
@@ -250,7 +265,8 @@ Reveal Correct Answer
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Illustration from <a href="https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us">Spurious Correlations</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Illustration and AI explanation with the prompt used to generate it can be found at <a href="https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us">Spurious Correlations</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Illustration and AI explanation with the prompt used to generate it can be found at <a href="https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us">Spurious Correlations</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -660,8 +676,8 @@ Reveal Correct Answer
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../lessons/Correlation_causation.html" class="pagination-link" aria-label="Correlation does not Equal Causation">
-        <span class="nav-page-text">Correlation does not Equal Causation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../lessons/RCT.html" class="pagination-link" aria-label="Randomized Experiments">
+        <span class="nav-page-text">Randomized Experiments</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
