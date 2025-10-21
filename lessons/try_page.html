@@ -2350,7 +2350,7 @@ Reveal Answers
 <!--   }); -->
 <!-- } -->
 <!-- </script> -->
-<div id="question" style="font-family: sans-serif; max-width: 500px; margin: 20px auto; padding: 20px; border: 2px solid #4A90E2; border-radius: 10px; background-color: #F0F8FF;">
+<div id="question" style="font-family: sans-serif; max-width: 500px; margin: 20px auto; padding: 20px;">
 <p style="font-size: 16px;">
 Suppose a randomized experiment gives the following group averages:
 </p>
@@ -2365,7 +2365,7 @@ Suppose a randomized experiment gives the following group averages:
 <p style="font-size: 16px;">
 What is the difference between the Treatment and Control group averages?
 </p>
-<input type="number" id="answer" placeholder="Enter your answer" style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;"> <button onclick="checkAnswer()" style="font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;">Check Answer</button>
+<input type="number" id="answer" placeholder="Enter your answer" style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" onkeydown="return event.key !== 'ArrowUp' &amp;&amp; event.key !== 'ArrowDown';"> <button onclick="checkAnswer()" style="font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;">Check Answer</button>
 <p id="feedback" style="font-size: 16px; margin-top: 10px;">
 </p>
 </div>
