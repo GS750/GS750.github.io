@@ -6,4 +6,12 @@ webr:
 
 ## 
 
-[Spurious Correlations](https://www.tylervigen.com/spurious-correlations)
+[Spurious Correlations](https://www.tylervigen.com/spurious-correlations)[^1]
+
+
+
+more text 
+
+
+
+[^1]: Learn more at [Spurious Correlations](https://www.tylervigen.com/spurious-correlations)
