@@ -46,8 +46,112 @@ This gives us a single-number estimate of the difference between the groups. How
 
 ## Try it yourself!
 
+**Example:** A botanist wants to test whether a new fertilizer helps plants grow taller. She randomly assigns 12 plants to receive the new fertilizer (**Treatment Group**) and 12 plants to receive regular soil (**Control Group**).  
+
+| Group             | Plant Height (cm) |
+|------------------|-----------------|
+| Treatment Group   | 25, 27, 26, 28, 24, 27, 26, 29, 25, 28, 27, 26 |
+| Control Group     | 20, 22, 21, 19, 21, 20, 22, 19, 21, 20, 21, 20 |
 
 
+
+
+1. What is the average height of the Treatment Group? Enter your answer with one decimal place (tenth place)
+
+<div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
+  <input type="number" id="answer" placeholder="Enter your answer" 
+         style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
+         onkeydown="return event.key !== 'ArrowUp' && event.key !== 'ArrowDown';">
+  <button onclick="checkAnswer()" style="font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;">Check Answer</button>
+  <p id="feedback" style="font-size: 16px; margin-top: 10px;"></p>
+</div>
+
+<script>
+function checkAnswer() {
+  const userAnswer = parseFloat(document.getElementById('answer').value);
+  const correctAnswer =  26.5
+  const feedback = document.getElementById('feedback');
+
+  if (isNaN(userAnswer)) {
+    feedback.textContent = "Please enter a number.";
+    feedback.style.color = "red";
+  } else if (Math.abs(userAnswer - correctAnswer) == 0) {
+    feedback.textContent = "Correct! 🎉";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "Not quite. Try again!";
+    feedback.style.color = "red";
+  }
+}
+</script>
+
+
+2. What is the average height of the Control Group? Enter your answer with one decimal place (tenth place)
+
+<div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
+  <input type="number" id="answer" placeholder="Enter your answer" 
+         style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
+         onkeydown="return event.key !== 'ArrowUp' && event.key !== 'ArrowDown';">
+  <button onclick="checkAnswer()" style="font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;">Check Answer</button>
+  <p id="feedback" style="font-size: 16px; margin-top: 10px;"></p>
+</div>
+
+<script>
+function checkAnswer() {
+  const userAnswer = parseFloat(document.getElementById('answer').value);
+  const correctAnswer =  20.8
+  const feedback = document.getElementById('feedback');
+
+  if (isNaN(userAnswer)) {
+    feedback.textContent = "Please enter a number.";
+    feedback.style.color = "red";
+  } else if (Math.abs(userAnswer - correctAnswer) == 0) {
+    feedback.textContent = "Correct! 🎉";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "Not quite. Try again!";
+    feedback.style.color = "red";
+  }
+}
+</script>
+
+
+3. Estimate the treatment effect? Enter your answer with one decimal place (tenth place)
+
+<div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
+  <input type="number" id="answer" placeholder="Enter your answer" 
+         style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
+         onkeydown="return event.key !== 'ArrowUp' && event.key !== 'ArrowDown';">
+  <button onclick="checkAnswer()" style="font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;">Check Answer</button>
+  <p id="feedback" style="font-size: 16px; margin-top: 10px;"></p>
+</div>
+
+<script>
+function checkAnswer() {
+  const userAnswer = parseFloat(document.getElementById('answer').value);
+  const correctAnswer =  5.7
+  const feedback = document.getElementById('feedback');
+
+  if (isNaN(userAnswer)) {
+    feedback.textContent = "Please enter a number.";
+    feedback.style.color = "red";
+  } else if (Math.abs(userAnswer - correctAnswer) == 0) {
+    feedback.textContent = "Correct! 🎉";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "Not quite. Try again!";
+    feedback.style.color = "red";
+  }
+}
+</script>
+
+
+
+
+
+
+
+# no change
 <!-- Interactive input box -->
 <div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
   <input type="number" id="answer" placeholder="Enter your answer" 
