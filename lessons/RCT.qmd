@@ -3,6 +3,7 @@ title: "Randomized Experiments"
 webr:
 show-startup-message: false \# Display status of webR initialization
 ---
+# What is a randomized experiment?
 
 Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?
 
@@ -14,8 +15,45 @@ One simple (although not always possible) way to do that is a **randomized exper
 
 For example, you might randomly assign some students to get the new method (the "treatment") and others to continue with the old method (the "control").
 
-::: {.callout-note appearance="simple"}
+::: {.callout-note appearance="simple", collapse="false"}
 ## Definition
 
 A **randomized experiment** refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.
+:::
+
+# How can we estimate treatment effect?
+
+After performing a randomized experiment, we can **directly compare the two groups** by looking at the difference in their average outcomes.
+
+**Example:** Suppose a school wants to test whether a new study program improves test scores. They randomly assign 10 students to the new program (**Treatment Group**) and 10 students to the regular program (**Control Group**).
+
+| Group             | Test Scores                               |
+|------------------|-------------------------------------------|
+| Treatment Group   | 88, 90, 85, 92, 87, 91, 89, 93, 90, 88   |
+| Control Group     | 80, 82, 78, 85, 81, 79, 83, 84, 82, 80   |
+
+**Step 1: Calculate the average score**
+
+- **Treatment Group average:**  
+\[
+\frac{88 + 90 + 85 + 92 + 87 + 91 + 89 + 93 + 90 + 88}{10} = 89.3
+\]
+
+- **Control Group average:**  
+\[
+\frac{80 + 82 + 78 + 85 + 81 + 79 + 83 + 84 + 82 + 80}{10} = 81.4
+\]
+
+**Step 2: Compare the averages**
+
+The difference is:  
+\[
+89.3 - 81.4 = 7.9 \text{ points}
+\]
+
+Since the students were randomly assigned, we can be confident that this difference is **caused by the new study program** rather than other factors.
+
+
+::: {.callout-warning appearance="simple"}
+This gives us a single-number estimate of the difference between the groups. However, **we can’t yet conclude whether this difference is statistically significant**. Don’t worry — future statistics classes will teach us how to test that! 🙂
 :::

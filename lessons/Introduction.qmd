@@ -48,7 +48,7 @@ Reveal Correct Answer
 
 <br>
 
-Read through the following AI-generated explanation for this observed trend with a high correlation[^1]:
+Read through the following AI-generated explanation for this observed trend with a high correlation:
 
 
 *"As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State's affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it's not just the students who deserve a well-tailored education!"*
@@ -65,6 +65,8 @@ It’s the science of figuring out how one thing affects another—while careful
 Explore more spurious correlations at this [link](https://www.tylervigen.com/spurious-correlations).
 :::
 
+
+In the next section, we will look
 
 
 [^1]: Illustration and AI explanation with the prompt used to generate it can be found at [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us).
