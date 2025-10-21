@@ -21,3 +21,15 @@ For example, you might randomly assign some students to get the new method (the 
 
 A **randomized experiment** refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.
 :::
+
+# Observational Studies
+
+While randomized experiments are the gold standard for identifying cause-and-effect relationships, they are not always possible. Sometimes it’s unethical, impractical, or too expensive to assign treatments randomly. 
+In these cases, researchers rely on observational data, where they simply collect information about what naturally happens and look for patterns.
+
+An **observational study** is a type of research where we observe and collect data on people, groups, or things without actively assigning treatments or interventions. Because the groups may differ in ways other than the factor we’re interested in, it can be harder to tell what actually causes an outcome compared to a randomized experiment.
+
+
+
+
+
