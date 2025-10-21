@@ -112,7 +112,7 @@
     "href": "lessons/ATE.html",
     "title": "Treatment Effect Estimation",
     "section": "",
-    "text": "Example: Suppose you decided to test whether the new method improves test scores. They randomly assign 10 of your students to the new method (Treatment Group) and 10 students to the regular method (Control Group).\n\n\n\nGroup\nTest Scores\n\n\n\n\nTreatment Group\n88, 90, 85, 92, 87, 91, 89, 93, 90, 88\n\n\nControl Group\n80, 82, 78, 85, 81, 79, 83, 84, 82, 80\n\n\n\nHow can you evaluate the effect of the new method (treatment)?\n::: {.callout-tip appearance=“simple”, collapse=“false”} ## Treatment effect estimation After performing a randomized experiment, we can directly compare the two groups by looking at the difference in their average outcomes. :::\nStep 1: Calculate the average score\n\nTreatment Group average:\n\\[\\frac{88 + 90 + 85 + 92 + 87 + 91 + 89 + 93 + 90 + 88}{10} = 89.3\\]\nControl Group average:\n\\[\n\\frac{80 + 82 + 78 + 85 + 81 + 79 + 83 + 84 + 82 + 80}{10} = 81.4\n\\]\n\nStep 2: Compare the averages\nThe difference is:\n\\(89.3 - 81.4 = 7.9 \\text{ points}\\)\nSince the students were randomly assigned, we can be confident that this difference is caused by the new study program rather than other factors.\n\n\n\n\n\n\nWarning\n\n\n\nThis gives us a single-number estimate of the difference between the groups. However, we can’t yet conclude whether this difference is statistically significant. Don’t worry — future statistics classes will teach us how to test that! 🙂\n\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "Example: Suppose you decided to test whether the new method improves test scores. They randomly assign 10 of your students to the new method (Treatment Group) and 10 students to the regular method (Control Group).\n\n\n\nGroup\nTest Scores\n\n\n\n\nTreatment Group\n88, 90, 85, 92, 87, 91, 89, 93, 90, 88\n\n\nControl Group\n80, 82, 78, 85, 81, 79, 83, 84, 82, 80\n\n\n\nHow can you evaluate the effect of the new method (treatment)?\n\n\n\n\n\n\nTipTreatment effect estimation\n\n\n\nAfter performing a randomized experiment, we can directly compare the two groups by looking at the difference in their average outcomes.\n\n\nStep 1: Calculate the average score\n\nTreatment Group average:\n\\[\\frac{88 + 90 + 85 + 92 + 87 + 91 + 89 + 93 + 90 + 88}{10} = 89.3\\]\nControl Group average:\n\\[\n\\frac{80 + 82 + 78 + 85 + 81 + 79 + 83 + 84 + 82 + 80}{10} = 81.4\n\\]\n\nStep 2: Compare the averages\nThe difference is:\n\\(89.3 - 81.4 = 7.9 \\text{ points}\\)\nSince the students were randomly assigned, we can be confident that this difference is caused by the new study program rather than other factors.\n\n\n\n\n\n\nWarning\n\n\n\nThis gives us a single-number estimate of the difference between the groups. However, we can’t yet conclude whether this difference is statistically significant. Don’t worry — future statistics classes will teach us how to test that! 🙂\n\n\n\n\n\n\n Check Answer",
     "crumbs": [
       "Home",
       "Content",
@@ -124,7 +124,7 @@
     "href": "lessons/ATE.html#try-it-yourself",
     "title": "Treatment Effect Estimation",
     "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "Check Answer",
     "crumbs": [
       "Home",
       "Content",
