@@ -6,29 +6,41 @@ webr:
 
 ## What is Causal Inference
 
-Imagine you want to know whether a teaching method you've learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?
-
-**Causal inference** is all about answering that kind of question: *What actually causes what?* It’s the science of figuring out the effect of one thing on another.
-
 Consider the following plot[^1]:
-
-![](/images/fashion_lecture_salary.png)
-
-
-
-What is the reported correlation coefficient ($r^2$) value?
-
-
-<button class="reveal-btn" onclick="document.getElementById('answer1').style.display='block'">
-Reveal Correct Answer
-</button>
-
-<div id="answer1" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
-💡 <strong>Answer:</strong> $r^2 = 0.954$.
-</div>
-
-
-
 
 [^1]: Illustration from [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us)
 
+![](/images/fashion_lecture_salary.png)
+
+What is the reported correlation coefficient ($r^2$) value?
+
+<button class="reveal-btn" onclick="document.getElementById(&#39;answer1&#39;).style.display=&#39;block&#39;">
+
+Reveal Correct Answer
+
+</button>
+
+::: {#answer1 style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;"}
+💡 <strong>Answer:</strong> $r^2 = 0.954$.
+:::
+
+Consider the following AI-generated explanation for an observed trend with a high correlation[^1]:
+
+
+*"As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State's affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it's not just the students who deserve a well-tailored education!"*
+Sounds a bit far-fetched, doesn’t it?
+
+What we’re seeing here is a classic example of **correlation not equaling causation** — just because two things move together doesn’t mean one caused the other.
+
+**Causal inference** is all about answering the question: *What actually causes what?*
+It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.
+
+
+::: {#tip-example .callout-tip}
+
+Explore more spurious correlations at this [link](https://www.tylervigen.com/spurious-correlations).
+:::
+
+
+
+[^1]: Illustration and AI explanation with the prompt used to generate it can be found at [Spurious Correlations](https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us).

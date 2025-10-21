@@ -20,8 +20,8 @@ website:
         text: Home
       - href: lessons/Introduction.qmd
         text: Introduction
-      - href: lessons/Correlation_causation.qmd
-        text: Correlation does not equal causation
+      - href: lessons/RCT.qmd
+        text: Randomized Experiments
   sidebar:
     style: "floating"
     contents:
@@ -30,7 +30,7 @@ website:
           - index.qmd
           - lessons/try_page.qmd
           - lessons/Introduction.qmd
-          - lessons/Correlation_causation.qmd
+          - lessons/RCT.qmd
 
   page-footer: 
     left: "Built using Quarto Webr."
