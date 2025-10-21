@@ -15,7 +15,7 @@ show-startup-message: false \# Display status of webR initialization
 
 How can you evaluate the effect of the new method (treatment)?
 
-::: {.callout-tip appearance="simple", collapse="false"}
+::: {.callout-tip appearance="simple"}
 ## Treatment effect estimation
 After performing a randomized experiment, we can **directly compare the two groups** by looking at the difference in their average outcomes.
 :::
@@ -46,63 +46,33 @@ This gives us a single-number estimate of the difference between the groups. How
 
 ## Try it yourself!
 
-```{webr-r}
-#| context: output
-
-library(htmltools)
-
-# Create UI elements
-tagList(
-  tags$div(
-    style = "font-family: sans-serif; max-width: 500px; margin: 20px auto; padding: 20px;",
-    tags$p("Suppose a randomized experiment gives the following group averages:"),
-    tags$ul(
-      tags$li(tags$b("Treatment Group average:"), " 89.3"),
-      tags$li(tags$b("Control Group average:"), " 81.4")
-    ),
-    tags$p("What is the difference between the Treatment and Control group averages?"),
-    tags$input(
-      id = "answer",
-      type = "number",
-      placeholder = "Enter your answer",
-      style = "font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;"
-    ),
-    tags$button(
-      "Check Answer",
-      id = "check",
-      style = "font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;"
-    ),
-    tags$p(id = "feedback", style = "font-size: 16px; margin-top: 10px;")
-  ),
-  
-  # Add JS interactivity
-  tags$script(HTML("
-    const correctAnswer = 89.3 - 81.4; // 7.9
-    document.getElementById('check').onclick = function() {
-      const userAnswer = parseFloat(document.getElementById('answer').value);
-      const feedback = document.getElementById('feedback');
-      
-      if (isNaN(userAnswer)) {
-        feedback.textContent = 'Please enter a number.';
-        feedback.style.color = 'red';
-      } else if (Math.abs(userAnswer - correctAnswer) < 0.01) {
-        feedback.textContent = 'Correct! 🎉';
-        feedback.style.color = 'green';
-      } else {
-        feedback.textContent = 'Not quite. Try again!';
-        feedback.style.color = 'red';
-      }
-    };
-    
-    // Disable arrow keys in number input
-    document.getElementById('answer').addEventListener('keydown', function(event) {
-      if(event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-        event.preventDefault();
-      }
-    });
-  "))
-)
 
 
-```
+<!-- Interactive input box -->
+<div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
+  <input type="number" id="answer" placeholder="Enter your answer" 
+         style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
+         onkeydown="return event.key !== 'ArrowUp' && event.key !== 'ArrowDown';">
+  <button onclick="checkAnswer()" style="font-size: 16px; padding: 5px 10px; border-radius: 5px; border: none; background-color: #4A90E2; color: white; cursor: pointer;">Check Answer</button>
+  <p id="feedback" style="font-size: 16px; margin-top: 10px;"></p>
+</div>
+
+<script>
+function checkAnswer() {
+  const userAnswer = parseFloat(document.getElementById('answer').value);
+  const correctAnswer = 89.3 - 81.4; // 7.9
+  const feedback = document.getElementById('feedback');
+
+  if (isNaN(userAnswer)) {
+    feedback.textContent = "Please enter a number.";
+    feedback.style.color = "red";
+  } else if (Math.abs(userAnswer - correctAnswer) < 0.01) {
+    feedback.textContent = "Correct! 🎉";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "Not quite. Try again!";
+    feedback.style.color = "red";
+  }
+}
+</script>
 
