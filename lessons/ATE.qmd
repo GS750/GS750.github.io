@@ -56,8 +56,9 @@ This gives us a single-number estimate of the difference between the groups. How
 
 
 
-1. What is the average height of the Treatment Group? Enter your answer with one decimal place (tenth place)
+1. What is the average height of the Treatment Group? Enter your answer with one decimal place (tenth place).
 
+```{=html}
 <div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
   <input type="number" id="answer" placeholder="Enter your answer" 
          style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
@@ -84,10 +85,11 @@ function checkAnswer() {
   }
 }
 </script>
+```
 
+2. What is the average height of the Control Group? Enter your answer with one decimal place (tenth place).
 
-2. What is the average height of the Control Group? Enter your answer with one decimal place (tenth place)
-
+```{=html}
 <div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
   <input type="number" id="answer" placeholder="Enter your answer" 
          style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
@@ -114,10 +116,11 @@ function checkAnswer() {
   }
 }
 </script>
+```
 
+3. Estimate the treatment effect? Enter your answer with one decimal place (tenth place).
 
-3. Estimate the treatment effect? Enter your answer with one decimal place (tenth place)
-
+```{=html}
 <div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
   <input type="number" id="answer" placeholder="Enter your answer" 
          style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
@@ -146,13 +149,14 @@ function checkAnswer() {
 </script>
 
 
-
+```
 
 
 
 
 # no change
 <!-- Interactive input box -->
+```{=html}
 <div id="interaction" style="font-family: sans-serif; max-width: 500px; margin: 10px auto; padding: 10px;">
   <input type="number" id="answer" placeholder="Enter your answer" 
          style="font-size: 16px; padding: 5px; width: 100px; margin-right: 10px; border-radius: 5px; border: 1px solid #ccc;" 
@@ -180,3 +184,4 @@ function checkAnswer() {
 }
 </script>
 
+```
