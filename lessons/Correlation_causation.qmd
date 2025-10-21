@@ -1,0 +1,9 @@
+---
+title: "Correlation does not Equal Causation"
+webr:  
+  show-startup-message: false    # Display status of webR initialization
+---
+
+## 
+
+[Spurious Correlations](https://www.tylervigen.com/spurious-correlations)

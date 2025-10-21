@@ -19,7 +19,9 @@ website:
       - href: index.qmd
         text: Home
       - href: lessons/Introduction.qmd
-        text: Lessons
+        text: Introduction
+      - href: lessons/Correlation_causation.qmd
+        text: Correlation does not equal causation
   sidebar:
     style: "floating"
     contents:
@@ -28,6 +30,7 @@ website:
           - index.qmd
           - lessons/try_page.qmd
           - lessons/Introduction.qmd
+          - lessons/Correlation_causation.qmd
 
   page-footer: 
     left: "Built using Quarto Webr."
