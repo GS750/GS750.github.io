@@ -2,6 +2,14 @@
 title: "Welcome"
 ---
 
+Welcome to the casual introduction to Causal Inference!
 
-Welcome to the casual introduction to Causal Inference! 
+In this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.
 
+Students will be able to:
+
+1.  Define causal inference.
+
+2.  Identify the difference between randomized experiments and observational studies.
+
+3.  Execute a difference–in-means calculation to estimate treatment effect.
