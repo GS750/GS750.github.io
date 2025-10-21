@@ -199,26 +199,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="what-is-a-randomized-experiment" class="level1">
+<h1>What is a randomized experiment?</h1>
 <p>Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?</p>
 <p>To do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method).</p>
 <p>One simple (although not always possible) way to do that is a <strong>randomized experiment</strong>, where individuals are randomly selected into <em>treatment</em> and <em>control</em> groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.</p>
 <p><a href="https://www.simplypsychology.org/randomized-controlled-trial.html"><img src="../images/randomized-controlled-trial.webp" class="img-fluid"></a></p>
 <p>For example, you might randomly assign some students to get the new method (the “treatment”) and others to continue with the old method (the “control”).</p>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<p>::: {.callout-note appearance=“simple”, collapse=“false”} ## Definition</p>
+<p>A <strong>randomized experiment</strong> refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied. :::</p>
+</section>
+<section id="how-can-we-estimate-treatment-effect" class="level1">
+<h1>How can we estimate treatment effect?</h1>
+<p>After performing a randomized experiment, we can <strong>directly compare the two groups</strong> by looking at the difference in their average outcomes.</p>
+<p><strong>Example:</strong> Suppose a school wants to test whether a new study program improves test scores. They randomly assign 10 students to the new program (<strong>Treatment Group</strong>) and 10 students to the regular program (<strong>Control Group</strong>).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Test Scores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Treatment Group</td>
+<td>88, 90, 85, 92, 87, 91, 89, 93, 90, 88</td>
+</tr>
+<tr class="even">
+<td>Control Group</td>
+<td>80, 82, 78, 85, 81, 79, 83, 84, 82, 80</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 1: Calculate the average score</strong></p>
+<ul>
+<li><p><strong>Treatment Group average:</strong><br>
+[ = 89.3 ]</p></li>
+<li><p><strong>Control Group average:</strong><br>
+[ = 81.4 ]</p></li>
+</ul>
+<p><strong>Step 2: Compare the averages</strong></p>
+<p>The difference is:<br>
+[ 89.3 - 81.4 = 7.9 ]</p>
+<p>Since the students were randomly assigned, we can be confident that this difference is <strong>caused by the new study program</strong> rather than other factors.</p>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition
+<div class="callout-body-container">
+<p>This gives us a single-number estimate of the difference between the groups. However, <strong>we can’t yet conclude whether this difference is statistically significant</strong>. Don’t worry — future statistics classes will teach us how to test that! 🙂</p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <strong>randomized experiment</strong> refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.</p>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
