@@ -229,6 +229,27 @@ window.Quarto = {
 </header>
 
 
+<style>
+.reveal-btn {
+  background-color: #4CAF50; /* green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reveal-btn:hover {
+  background-color: #45a049;  /* darker green on hover */
+  transform: scale(1.05);     /* slight grow effect */
+}
+
+.reveal-btn:active {
+  transform: scale(0.98);     /* shrink a little when clicked */
+}
+</style>
 <section id="what-is-causal-inference" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-causal-inference">What is Causal Inference</h2>
 <p>Consider the following plot<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
@@ -240,7 +261,7 @@ window.Quarto = {
 <div id="answer1" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
 <p>💡 <strong>Answer:</strong> <span class="math inline">\(r^2 = 0.954\)</span>.</p>
 </div>
-<p>Consider the following AI-generated explanation for an observed trend with a high correlation<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
+<p>Read through the following AI-generated explanation for this observed trend with a high correlation<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
 <p><em>“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”</em> Sounds a bit far-fetched, doesn’t it?</p>
 <p>What we’re seeing here is a classic example of <strong>correlation not equaling causation</strong> — just because two things move together doesn’t mean one caused the other.</p>
 <p><strong>Causal inference</strong> is all about answering the question: <em>What actually causes what?</em> It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.</p>
