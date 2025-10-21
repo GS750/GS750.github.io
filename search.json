@@ -40,7 +40,7 @@
     "href": "lessons/Introduction.html",
     "title": "What is Causal Inference?",
     "section": "",
-    "text": "Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?\nCausal inference is all about answering that kind of question: What actually causes what? It’s the science of figuring out the effect of one thing on another.\nTo do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method).\nOne simple (although not always possible) way to do that is a randomized experiment, where individuals are randomly selected into “treatment” and “control” groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.\nFor example some students are randomly chosen to get the new method (the “treatment”) and others are not (the “control”).\nSo, causal inference is like being a detective for cause-and-effect: you look carefully at the data, make sure groups are comparable, and try to figure out whether a change in one thing really leads to a change in another.",
+    "text": "Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?\nCausal inference is all about answering that kind of question: What actually causes what? It’s the science of figuring out the effect of one thing on another.\nConsider the following plot1:\n\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\n\nReveal Correct Answer\n\n\n💡 Answer: \\(r^2 = 0.954\\).",
     "crumbs": [
       "Home",
       "Content",
@@ -52,7 +52,19 @@
     "href": "lessons/Introduction.html#what-is-causal-inference",
     "title": "What is Causal Inference?",
     "section": "",
-    "text": "Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?\nCausal inference is all about answering that kind of question: What actually causes what? It’s the science of figuring out the effect of one thing on another.\nTo do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method).\nOne simple (although not always possible) way to do that is a randomized experiment, where individuals are randomly selected into “treatment” and “control” groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.\nFor example some students are randomly chosen to get the new method (the “treatment”) and others are not (the “control”).\nSo, causal inference is like being a detective for cause-and-effect: you look carefully at the data, make sure groups are comparable, and try to figure out whether a change in one thing really leads to a change in another.",
+    "text": "Imagine you want to know whether a teaching method you’ve learned about in GS750 really helps students in your class. You notice that students who took the class with these new implementations seem to get higher scores. But wait — maybe those students were already more motivated, or had more free time. How can you tell if it was really the teaching method that caused the improvement?\nCausal inference is all about answering that kind of question: What actually causes what? It’s the science of figuring out the effect of one thing on another.\nConsider the following plot1:\n\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\n\nReveal Correct Answer\n\n\n💡 Answer: \\(r^2 = 0.954\\).",
+    "crumbs": [
+      "Home",
+      "Content",
+      "What is Causal Inference?"
+    ]
+  },
+  {
+    "objectID": "lessons/Introduction.html#footnotes",
+    "href": "lessons/Introduction.html#footnotes",
+    "title": "What is Causal Inference?",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIllustration from Spurious Correlations↩︎",
     "crumbs": [
       "Home",
       "Content",
@@ -136,7 +148,7 @@
     "href": "lessons/try_page.html#matching-exercise-treatment-vs-outcome",
     "title": "TRY out page",
     "section": "Matching Exercise: Treatment vs Outcome",
-    "text": "Matching Exercise: Treatment vs Outcome",
+    "text": "Matching Exercise: Treatment vs Outcome\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTo do this, researchers try to compare groups that are as similar as possible — except for the thing they’re testing (like the new teaching method).\nOne simple (although not always possible) way to do that is a randomized experiment, where individuals are randomly selected into “treatment” and “control” groups. Because the assignment is random, the groups are fair, and any difference in outcomes can be attributed to the treatment itself.\nFor example some students are randomly chosen to get the new method (the “treatment”) and others are not (the “control”).\nSo, causal inference is like being a detective for cause-and-effect: you look carefully at the data, make sure groups are comparable, and try to figure out whether a change in one thing really leads to a change in another.",
     "crumbs": [
       "Home",
       "Content",
