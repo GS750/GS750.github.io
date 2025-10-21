@@ -16,7 +16,8 @@ One simple (although not always possible) way to do that is a **randomized exper
 
 For example, you might randomly assign some students to get the new method (the "treatment") and others to continue with the old method (the "control").
 
-::: {.callout-note appearance="simple" collapse="false"}
+::: {.callout-note icon=false}
+
 ## Definition
 
 A **randomized experiment** refers to a scientific study design in which participants are randomly assigned to either a treatment group or a control group. This ensures that any differences in outcomes between the two groups can be attributed solely to the treatment being studied.
@@ -28,7 +29,8 @@ While randomized experiments are the gold standard for identifying cause-and-eff
 
 An **observational study** is a type of research where we observe and collect data on people, groups, or things without actively assigning treatments or interventions. Because the groups may differ in ways other than the factor we’re interested in, it can be harder to tell what actually causes an outcome compared to a randomized experiment.
 
-::: {.callout-note appearance="simple" collapse="false"}
+::: {.callout-note icon=false}
+
 ## Food for thought:
 
 -   Randomized experiments are not the only way to study causality. There are other experimental designs, like quasi-experiments or field experiments, that can help when full randomization isn’t possible.
