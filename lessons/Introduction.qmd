@@ -4,6 +4,28 @@ webr:
   show-startup-message: false   # Display status of webR initialization
 ---
 
+<style>
+.reveal-btn {
+  background-color: #4CAF50; /* green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.reveal-btn:hover {
+  background-color: #45a049;  /* darker green on hover */
+  transform: scale(1.05);     /* slight grow effect */
+}
+
+.reveal-btn:active {
+  transform: scale(0.98);     /* shrink a little when clicked */
+}
+</style>
+
 ## What is Causal Inference
 
 Consider the following plot[^1]:
@@ -24,7 +46,8 @@ Reveal Correct Answer
 💡 <strong>Answer:</strong> $r^2 = 0.954$.
 :::
 
-Consider the following AI-generated explanation for an observed trend with a high correlation[^1]:
+
+Read through the following AI-generated explanation for this observed trend with a high correlation[^1]:
 
 
 *"As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State's affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it's not just the students who deserve a well-tailored education!"*
