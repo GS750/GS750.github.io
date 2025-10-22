@@ -66,18 +66,6 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to the casual introduction to Causal Inference!\nIn this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.\nStudents will be able to:\n\nDefine what is the study of causal inference.\nIdentify the difference between randomized experiments and observational studies.\nExecute a difference–in-means calculation to estimate treatment effect.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "Welcome"
-    ]
-  },
-  {
     "objectID": "lessons/ATE.html",
     "href": "lessons/ATE.html",
     "title": "Treatment Effect Estimation",
@@ -99,6 +87,66 @@
       "Home",
       "Content",
       "Treatment Effect Estimation"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to the casual introduction to Causal Inference!\nIn this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.\nStudents will be able to:\n\nDefine what is the study of causal inference.\nIdentify the difference between randomized experiments and observational studies.\nExecute a difference–in-means calculation to estimate treatment effect.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "lessons/next.html",
+    "href": "lessons/next.html",
+    "title": "Looking Ahead",
+    "section": "",
+    "text": "In this lesson, you learned:\n\nWhat causal inference is — the science of figuring out what causes what and separating true effects from confounding relationships.\n\nWhat a randomized experiment is — a study design where participants are randomly assigned to treatment and control groups, allowing us to make causal claims.\nHow to estimate a treatment effect — by comparing the average outcomes of the two groups.\n\nThat not all data comes from experiments — sometimes we rely on observational studies, where we observe what happens naturally rather than assigning treatments ourselves.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Looking Ahead"
+    ]
+  },
+  {
+    "objectID": "lessons/next.html#summary",
+    "href": "lessons/next.html#summary",
+    "title": "Looking Ahead",
+    "section": "",
+    "text": "In this lesson, you learned:\n\nWhat causal inference is — the science of figuring out what causes what and separating true effects from confounding relationships.\n\nWhat a randomized experiment is — a study design where participants are randomly assigned to treatment and control groups, allowing us to make causal claims.\nHow to estimate a treatment effect — by comparing the average outcomes of the two groups.\n\nThat not all data comes from experiments — sometimes we rely on observational studies, where we observe what happens naturally rather than assigning treatments ourselves.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Looking Ahead"
+    ]
+  },
+  {
+    "objectID": "lessons/next.html#key-takeaways",
+    "href": "lessons/next.html#key-takeaways",
+    "title": "Looking Ahead",
+    "section": "🔍 Key Takeaways",
+    "text": "🔍 Key Takeaways\n\nRandomization helps ensure that differences between groups are due to the treatment, not preexisting factors.\n\nThe difference in group averages gives us a first look at the treatment effect — but future lessons will help us decide whether the difference is statistically significant.\n\nExperiments aren’t always possible — sometimes for ethical, practical, or cost reasons — and that’s where observational data becomes essential.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Looking Ahead"
+    ]
+  },
+  {
+    "objectID": "lessons/next.html#whats-next",
+    "href": "lessons/next.html#whats-next",
+    "title": "Looking Ahead",
+    "section": "🚀 What’s Next",
+    "text": "🚀 What’s Next\nIn the next section, we’ll move beyond simple comparisons and start exploring:\n\nHow the design of the experiment can be improved.\nHow to handle data from observational studies.\n\nHow to begin thinking about confounders and adjustment.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Looking Ahead"
     ]
   },
   {

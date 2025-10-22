@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>What is Causal Inference? – Casual Causal Inference</title>
+<title>Looking Ahead – Casual Causal Inference</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../lessons/RCT.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../lessons/ATE.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -154,7 +124,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Introduction.html">What is Causal Inference?</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/next.html">Looking Ahead</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -187,7 +157,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/Introduction.html" class="sidebar-item-text sidebar-link active">
+  <a href="../lessons/Introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">What is Causal Inference?</span></a>
   </div>
 </li>
@@ -205,7 +175,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lessons/next.html" class="sidebar-item-text sidebar-link">
+  <a href="../lessons/next.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Looking Ahead</span></a>
   </div>
 </li>
@@ -220,9 +190,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/Introduction.html">What is Causal Inference?</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Content</a></li><li class="breadcrumb-item"><a href="../lessons/next.html">Looking Ahead</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">What is Causal Inference?</h1>
+<h1 class="title">Looking Ahead</h1>
 </div>
 
 
@@ -239,78 +209,44 @@ window.Quarto = {
 </header>
 
 
-<style>
-.reveal-btn {
-  background-color: #4CAF50; /* green */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.reveal-btn:hover {
-  background-color: #45a049;  /* darker green on hover */
-  transform: scale(1.05);     /* slight grow effect */
-}
-
-.reveal-btn:active {
-  transform: scale(0.98);     /* shrink a little when clicked */
-}
-</style>
-<p>Consider the following plot<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
-<p><img src="../images/fashion_lecture_salary.png" class="img-fluid"></p>
-<p>What is the reported correlation coefficient (<span class="math inline">\(r^2\)</span>) value?</p>
-<button class="reveal-btn" onclick="document.getElementById('answer1').style.display='block'">
-<p>Reveal Correct Answer</p>
-</button>
-<div id="answer1" style="display:none; margin-top:10px; padding:10px; border-left:4px solid #4CAF50; background:#f0fff0; border-radius:5px;">
-<p>💡 <strong>Answer:</strong> <span class="math inline">\(r^2 = 0.954\)</span>.</p>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Go to the discussion board on <a href="https://canvas.duke.edu/courses/68577/discussion_topics/235131">Canvas</a> and post a short (1–2 sentence) response explaining <strong>one possible reason</strong> for the trend shown in the graph. What might be driving this pattern? Your name will be hidden from other students.</p>
-</div>
-</div>
-<p>Now read through the following AI-generated explanation for this observed trend with a high correlation:</p>
-<p><em>“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”</em></p>
-<p>Sounds a bit far-fetched, doesn’t it?</p>
-<p>What we’re seeing here is a classic example of <strong>correlation not equaling causation</strong> — just because two things move together doesn’t mean one caused the other.</p>
-<p><strong>Causal inference</strong> is all about answering the question: <em>What actually causes what?</em> It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.</p>
-<div id="tip-example" class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip&nbsp;1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Explore more spurious correlations at this <a href="https://www.tylervigen.com/spurious-correlations">link</a>.</p>
-</div>
-</div>
-<p>In the next section, we will explore one powerful way to study causal relationships: randomized experiments.</p>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">🌱 Summary</h2>
+<p>In this lesson, you learned:</p>
+<ul>
+<li><strong>What causal inference is</strong> — the science of figuring out what causes what and separating true effects from confounding relationships.<br>
+</li>
+<li><strong>What a randomized experiment is</strong> — a study design where participants are randomly assigned to treatment and control groups, allowing us to make causal claims.</li>
+<li><strong>How to estimate a treatment effect</strong> — by comparing the average outcomes of the two groups.<br>
+</li>
+<li><strong>That not all data comes from experiments</strong> — sometimes we rely on observational studies, where we observe what happens naturally rather than assigning treatments ourselves.</li>
+</ul>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">🔍 Key Takeaways</h2>
+<ul>
+<li>Randomization helps ensure that differences between groups are due to the treatment, not preexisting factors.<br>
+</li>
+<li>The difference in group averages gives us a first look at the treatment effect — but future lessons will help us decide whether the difference is statistically significant.<br>
+</li>
+<li>Experiments aren’t always possible — sometimes for ethical, practical, or cost reasons — and that’s where observational data becomes essential.</li>
+</ul>
+<hr>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">🚀 What’s Next</h2>
+<p>In the next section, we’ll move beyond simple comparisons and start exploring:</p>
+<ul>
+<li>How the <strong>design of the experiment</strong> can be improved.</li>
+<li>How to handle data from <strong>observational studies</strong>.<br>
+</li>
+<li>How to begin thinking about <strong>confounders</strong> and <strong>adjustment</strong>.</li>
+</ul>
 
 
+</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Illustration and AI explanation with the prompt used to generate it can be found at <a href="https://www.tylervigen.com/spurious/correlation/1780_the-number-of-fashion-designers-in-florida_correlates-with_university-lecturer-salaries-in-the-us">Spurious Correlations</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -713,14 +649,11 @@ Tip&nbsp;1
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Welcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
+      <a href="../lessons/ATE.html" class="pagination-link" aria-label="Treatment Effect Estimation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Treatment Effect Estimation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../lessons/RCT.html" class="pagination-link" aria-label="Randomized Experiments">
-        <span class="nav-page-text">Randomized Experiments</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -731,7 +664,7 @@ Tip&nbsp;1
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/GS750/GS750.github.io/edit/main/lessons/Introduction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/GS750/GS750.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/GS750/GS750.github.io/edit/main/lessons/next.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/GS750/GS750.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
