@@ -50,7 +50,7 @@ Reveal Correct Answer
 
 
 ::: {.callout-important }
-Go to the discussion board on Canvas and post a short (1–2 sentence) response explaining **one possible reason** for the trend shown in the graph. What might be driving this pattern? Your name will be hidden from other students.
+Go to the discussion board on [Canvas](https://canvas.duke.edu/courses/68577/discussion_topics/235131) and post a short (1–2 sentence) response explaining **one possible reason** for the trend shown in the graph. What might be driving this pattern? Your name will be hidden from other students.
 :::
 
 
