@@ -30,7 +30,6 @@ website:
       - section: "Content"
         contents:
           - index.qmd
-          - lessons/try_page.qmd
           - lessons/Introduction.qmd
           - lessons/RCT.qmd
           - lessons/ATE.qmd
