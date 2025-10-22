@@ -4,8 +4,8 @@ webr:
   show-startup-message: false   # Display status of webR initialization
 ---
 
-Welcome to the casual introduction to Causal Inference! [^1]
-[^1]: https://xkcd.com/552/
+Welcome to the casual introduction to Causal Inference!
+
 
 In this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.
 
