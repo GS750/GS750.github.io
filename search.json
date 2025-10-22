@@ -94,7 +94,7 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome to the casual introduction to Causal Inference!\nIn this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.\nStudents will be able to:\n\nDefine what is the study of causal inference.\nIdentify the difference between randomized experiments and observational studies.\nExecute a difference–in-means calculation to estimate treatment effect.",
+    "text": "Welcome to the casual introduction to Causal Inference![^1]\nIn this lesson, students will learn what the study of causal inference is as well as why randomized experiments are considered the golden standard.\nStudents will be able to:\n\nDefine what is the study of causal inference.\nIdentify the difference between randomized experiments and observational studies.\nExecute a difference–in-means calculation to estimate treatment effect.\n\n](https://xkcd.com/552/)",
     "crumbs": [
       "Home",
       "Content",
