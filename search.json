@@ -4,79 +4,49 @@
     "href": "lessons/try_page.html",
     "title": "TRY out page",
     "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "TRY out page"
-    ]
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "lessons/try_page.html#what-is-causal-inference",
     "href": "lessons/try_page.html#what-is-causal-inference",
     "title": "TRY out page",
     "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "TRY out page"
-    ]
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page."
   },
   {
     "objectID": "lessons/try_page.html#question",
     "href": "lessons/try_page.html#question",
     "title": "TRY out page",
     "section": "Question",
-    "text": "Question\nCompute the difference in means between treated and control groups.\n\n\n\nReveal Correct Answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z.",
-    "crumbs": [
-      "Home",
-      "Content",
-      "TRY out page"
-    ]
+    "text": "Question\nCompute the difference in means between treated and control groups.\n\n\n\nReveal Correct Answer\n\n\n💡 Answer: The difference in means is approximately 2.1 — same as the regression coefficient on z."
   },
   {
     "objectID": "lessons/try_page.html#instructions",
     "href": "lessons/try_page.html#instructions",
     "title": "TRY out page",
     "section": "Instructions",
-    "text": "Instructions\nMatch each description on the left with the correct variable type on the right.\n\nTreatment = variable that we manipulate\n\nOutcome = variable we measure\n\n\n\n\nDescription\nMatch\n\n\n\n\n1. Did the student receive the new teaching method?\n❓\n\n\n2. Test score after the intervention\n❓\n\n\n3. Whether the patient got a medication\n❓\n\n\n4. Blood pressure after treatment\n❓\n\n\n\n\n\nReveal Answers\n\n\n\n\nDescription\nAnswer\n\n\n\n\n1. Did the student receive the new teaching method?\nTreatment\n\n\n2. Test score after the intervention\nOutcome\n\n\n3. Whether the patient got a medication\nTreatment\n\n\n4. Blood pressure after treatment\nOutcome",
-    "crumbs": [
-      "Home",
-      "Content",
-      "TRY out page"
-    ]
+    "text": "Instructions\nMatch each description on the left with the correct variable type on the right.\n\nTreatment = variable that we manipulate\n\nOutcome = variable we measure\n\n\n\n\nDescription\nMatch\n\n\n\n\n1. Did the student receive the new teaching method?\n❓\n\n\n2. Test score after the intervention\n❓\n\n\n3. Whether the patient got a medication\n❓\n\n\n4. Blood pressure after treatment\n❓\n\n\n\n\n\nReveal Answers\n\n\n\n\nDescription\nAnswer\n\n\n\n\n1. Did the student receive the new teaching method?\nTreatment\n\n\n2. Test score after the intervention\nOutcome\n\n\n3. Whether the patient got a medication\nTreatment\n\n\n4. Blood pressure after treatment\nOutcome"
   },
   {
     "objectID": "lessons/try_page.html#drag-and-drop-matching-treatment-vs-outcome",
     "href": "lessons/try_page.html#drag-and-drop-matching-treatment-vs-outcome",
     "title": "TRY out page",
     "section": "Drag-and-Drop Matching: Treatment vs Outcome",
-    "text": "Drag-and-Drop Matching: Treatment vs Outcome\n\n  \n    \n    \n      Student got new method\n      Test score after intervention\n      Patient received medication\n      Blood pressure after treatment\n    \n\n    \n    \n      \n        Treatment\n      \n      \n        Outcome\n      \n    \n  \n\n  \n  \n    Check Answers\n    Reset",
-    "crumbs": [
-      "Home",
-      "Content",
-      "TRY out page"
-    ]
+    "text": "Drag-and-Drop Matching: Treatment vs Outcome\n\n  \n    \n    \n      Student got new method\n      Test score after intervention\n      Patient received medication\n      Blood pressure after treatment\n    \n\n    \n    \n      \n        Treatment\n      \n      \n        Outcome\n      \n    \n  \n\n  \n  \n    Check Answers\n    Reset"
   },
   {
     "objectID": "lessons/try_page.html#matching-exercise-treatment-vs-outcome",
     "href": "lessons/try_page.html#matching-exercise-treatment-vs-outcome",
     "title": "TRY out page",
     "section": "Matching Exercise: Treatment vs Outcome",
-    "text": "Matching Exercise: Treatment vs Outcome\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuppose a randomized experiment gives the following group averages:\n\n\n\nTreatment Group average: 89.3\n\n\nControl Group average: 81.4\n\n\n\nWhat is the difference between the Treatment and Control group averages?\n\n Check Answer",
-    "crumbs": [
-      "Home",
-      "Content",
-      "TRY out page"
-    ]
+    "text": "Matching Exercise: Treatment vs Outcome\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuppose a randomized experiment gives the following group averages:\n\n\n\nTreatment Group average: 89.3\n\n\nControl Group average: 81.4\n\n\n\nWhat is the difference between the Treatment and Control group averages?\n\n Check Answer"
   },
   {
     "objectID": "lessons/Introduction.html",
     "href": "lessons/Introduction.html",
     "title": "What is Causal Inference?",
     "section": "",
-    "text": "Consider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\nRead through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!” Sounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
+    "text": "Consider the following plot1:\nWhat is the reported correlation coefficient (\\(r^2\\)) value?\nRead through the following AI-generated explanation for this observed trend with a high correlation:\n“As more fashion designers flocked to Florida, it led to a surge in unique and flamboyant fashion trends. This created a sudden demand for expert fashion history and theory lecturers across the country. As universities scrambled to keep up with the latest haute couture curriculum, they had to offer higher salaries to attract and retain the most fashionable academic talent. So, in a twist no one saw coming, the Sunshine State’s affinity for style inadvertently elevated the bank accounts of university lecturers nationwide. After all, it’s not just the students who deserve a well-tailored education!”\nSounds a bit far-fetched, doesn’t it?\nWhat we’re seeing here is a classic example of correlation not equaling causation — just because two things move together doesn’t mean one caused the other.\nCausal inference is all about answering the question: What actually causes what? It’s the science of figuring out how one thing affects another—while carefully separating out confounders, factors that influence both variables and can make their causal relationship look misleading.\nIn the next section, we will explore one powerful way to study causal relationships: randomized experiments.",
     "crumbs": [
       "Home",
       "Content",
