@@ -1,0 +1,33 @@
+---
+title: "Looking Ahead"
+webr:  
+  show-startup-message: false   # Display status of webR initialization
+---
+
+
+## 🌱 Summary
+
+In this lesson, you learned:
+
+- **What causal inference is** — the science of figuring out what causes what and separating true effects from confounding relationships.  
+- **What a randomized experiment is** — a study design where participants are randomly assigned to treatment and control groups, allowing us to make causal claims.
+- **How to estimate a treatment effect** — by comparing the average outcomes of the two groups.  
+- **That not all data comes from experiments** — sometimes we rely on observational studies, where we observe what happens naturally rather than assigning treatments ourselves.  
+
+---
+
+## 🔍 Key Takeaways
+
+- Randomization helps ensure that differences between groups are due to the treatment, not preexisting factors.  
+- The difference in group averages gives us a first look at the treatment effect — but future lessons will help us decide whether the difference is statistically significant.  
+- Experiments aren’t always possible — sometimes for ethical, practical, or cost reasons — and that’s where observational data becomes essential.  
+
+---
+
+## 🚀 What’s Next
+
+In the next section, we’ll move beyond simple comparisons and start exploring:
+ 
+- How the **design of the experiment** can be improved.
+- How to handle data from **observational studies**.   
+- How to begin thinking about **confounders** and **adjustment**.  

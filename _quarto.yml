@@ -33,6 +33,7 @@ website:
           - lessons/Introduction.qmd
           - lessons/RCT.qmd
           - lessons/ATE.qmd
+          - lessons/next.qmd
 
   page-footer: 
     left: "Built using Quarto Webr."
